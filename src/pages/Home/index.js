@@ -1,18 +1,51 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {Platform, Text, TouchableOpacity, Alert} from 'react-native';
-import {ContainerStyled, TextStyled, TextInputStyled} from './styles';
+import {Platform} from 'react-native';
+import BoxCollection from '../../components/BoxCollection';
+import {Container} from './styles';
 
-function Page1({navigation}) {
+function Home({navigation}) {
+  const sections = [
+    {
+      name: 'top 100',
+    },
+    {
+      name: 'romantic',
+    },
+    {
+      name: 'thriller',
+    },
+    {
+      name: 'action',
+    },
+    {
+      name: 'sci-fi',
+    },
+  ];
+
+  const books = [
+    {
+      name: 'thriller',
+      author: 'gabriel',
+      sections: ['top 100', 'thriller'],
+    },
+    {
+      name: 'romantico',
+      author: 'gabriel',
+      sections: ['top 100', 'romantic'],
+    },
+  ];
   return (
-    <ContainerStyled enabled={Platform.OS === 'ios'} behavior="padding">
-      <Text>olá</Text>
-    </ContainerStyled>
+    <Container enabled={Platform.OS === 'ios'} behavior="padding">
+      {sections.map(section => (
+        <BoxCollection books={books} section={section} />
+      ))}
+    </Container>
   );
 }
-export default Page1;
+export default Home;
 
-Page1.propTypes = {
+Home.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
     getParam: PropTypes.func,
@@ -20,6 +53,6 @@ Page1.propTypes = {
   }),
 };
 
-Page1.defaultProps = {
+Home.defaultProps = {
   navigation: {},
 };

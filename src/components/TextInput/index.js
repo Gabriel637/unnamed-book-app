@@ -210,7 +210,7 @@ TextInput.defaultProps = {
   returnFocus: () => {},
   maxLength: 99999,
   submit: () => {},
-  autoFocus: true,
+  autoFocus: false,
   autoCorrect: false,
   width: '',
   getRef: () => {},

@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import {TabsBox, MenuIconBox, TextIcon} from './styles';
 import {MaterialCommunityIcons as Icon} from '../../styles/LoadFonts';
 import {colors} from '../../styles/Colors';
 import {metrics} from '../../styles/Metrics';
 
-function Tabs() {
+function Tabs({navigation}) {
   const icons = [
     {
       name: 'home',
@@ -13,7 +14,6 @@ function Tabs() {
     {
       name: 'book-open-variant',
       text: 'my books',
-      handler: () => alert(1),
     },
     {
       name: 'cart',
@@ -50,8 +50,14 @@ function Tabs() {
   );
 }
 
-Tabs.propTypes = {};
+Tabs.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
+    getParam: PropTypes.func,
+    setParams: PropTypes.func,
+  }),
+};
 
-Tabs.defaultProps = {};
+Tabs.defaultProps = {navigation: {}};
 
 export default Tabs;

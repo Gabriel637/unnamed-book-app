@@ -4,5 +4,5 @@ import {metrics} from '../../styles/Metrics';
 
 export const Container = styled.ScrollView`
   flex: 1;
-  background-color: ${colors.white};
+  background-color: ${colors.lighter2};
 `;

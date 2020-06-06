@@ -1,21 +1,20 @@
 import {metrics} from '../../styles/Metrics';
+import {colors} from '../../styles/Colors';
 import styled from 'styled-components/native';
 
 export const HeaderBox = styled.View`
-  margin-top: ${metrics.widthPercentageToDP(60)}px;
-  padding: ${metrics.widthPercentageToDP(10)}px;
-  height: ${metrics.widthPercentageToDP(60)}px;
-  flex-direction: row;
-  justify-content: space-around;
-`;
-
-export const MenuIconBox = styled.View`
-  height: ${metrics.widthPercentageToDP(40)}px;
-  width: ${metrics.widthPercentageToDP(50)}px;
-`;
-
-export const SearchBox = styled.View`
-  height: ${metrics.widthPercentageToDP(40)}px;
+  margin-top: ${metrics.widthPercentageToDP(50)}px;
   width: ${metrics.widthPercentageToDP(328)}px;
+  height: ${metrics.widthPercentageToDP(40)}px;
+  align-self: center;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+`;
+
+export const LogoTitle = styled.Text`
+  font-size: ${metrics.widthPercentageToDP(32)}px;
+  text-transform: uppercase;
+  color: ${colors.primary};
+  align-self: center;
 `;

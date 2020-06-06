@@ -10,6 +10,7 @@ function Tabs({navigation}) {
     {
       name: 'home',
       text: 'home',
+      color: colors.primary,
     },
     {
       name: 'book-open-variant',
@@ -26,7 +27,7 @@ function Tabs({navigation}) {
       handler: () => alert(1),
     },
     {
-      name: 'settings',
+      name: 'menu',
       text: 'settings',
       handler: () => alert(1),
     },

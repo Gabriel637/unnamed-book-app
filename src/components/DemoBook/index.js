@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {BooksBox, Title} from './styles';
+import {BooksBox, Title, SubTitle} from './styles';
 
-function Book({name}) {
+function Book({name, author}) {
   return (
     <>
       <BooksBox>
         <Title>{name}</Title>
+        <SubTitle>
+          {'\n'} {author}
+        </SubTitle>
       </BooksBox>
     </>
   );

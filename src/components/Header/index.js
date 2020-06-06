@@ -1,14 +1,20 @@
 import React from 'react';
-import TextInput from '../TextInput';
-import {HeaderBox, SearchBox} from './styles';
+import {colors} from '../../styles/Colors';
+import {metrics} from '../../styles/Metrics';
+import {MaterialCommunityIcons as Icon} from '../../styles/LoadFonts';
+import {HeaderBox, LogoTitle} from './styles';
 
 function Header({}) {
   return (
     <>
       <HeaderBox>
-        <SearchBox>
-          <TextInput label={'Pesquisar'} />
-        </SearchBox>
+        <LogoTitle>Liber</LogoTitle>
+        <Icon
+          name="magnify"
+          size={metrics.widthPercentageToDP(30)}
+          color={colors.gray3}
+          onPress={null}
+        />
       </HeaderBox>
     </>
   );

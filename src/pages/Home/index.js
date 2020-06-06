@@ -25,13 +25,13 @@ function Home({navigation}) {
 
   const books = [
     {
-      name: 'thriller',
-      author: 'gabriel',
+      name: 'Harry Potter',
+      author: 'J.K Rowling',
       sections: ['top 100', 'thriller'],
     },
     {
-      name: 'romantico',
-      author: 'gabriel',
+      name: 'livrinho',
+      author: 'gabriel amorim',
       sections: ['top 100', 'romantic'],
     },
   ];

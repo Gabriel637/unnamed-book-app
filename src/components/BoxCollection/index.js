@@ -38,7 +38,7 @@ function BoxCollection({books, section}) {
       </Header>
       <SectionContainer horizontal showsHorizontalScrollIndicator={false}>
         {booksList.map(book => (
-          <DemoBook name={book.name} />
+          <DemoBook name={book.name} author={book.author} />
         ))}
       </SectionContainer>
     </Container>

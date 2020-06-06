@@ -8,10 +8,11 @@ export const Container = styled.ScrollView`
     css`
       display: none;
     `}
+  margin: 0px 0px 10px;
+  background-color: ${colors.white};
 `;
 
 export const SectionContainer = styled.ScrollView`
-  margin: 0px 0px 10px;
   padding: 5px 10px 10px;
   height: ${metrics.widthPercentageToDP(170)}px;
 `;
@@ -21,20 +22,22 @@ export const Header = styled.View`
   flex-direction: row;
   height: ${metrics.widthPercentageToDP(30)}px;
   padding-bottom: ${metrics.widthPercentageToDP(5)}px;
-  border-bottom-color: ${colors.gray4};
+  border-bottom-color: ${colors.primary};
   border-bottom-width: 1;
   justify-content: space-between;
 `;
 
 export const SectionText = styled.Text`
-  font-size: ${metrics.widthPercentageToDP(22)}px;
+  font-size: ${metrics.widthPercentageToDP(18)}px;
+  text-transform: uppercase;
+  color: ${colors.gray6};
   position: absolute;
   bottom: 3;
 `;
 
 export const SubText = styled.Text`
   font-size: ${metrics.widthPercentageToDP(10)}px;
-  color: ${colors.blue};
+  color: ${colors.link_blue};
   position: absolute;
   bottom: 3;
   right: 0;

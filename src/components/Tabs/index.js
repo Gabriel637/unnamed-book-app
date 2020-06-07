@@ -1,49 +1,66 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {useState} from 'react';
 import {TabsBox, MenuIconBox, TextIcon} from './styles';
 import {MaterialCommunityIcons as Icon} from '../../styles/LoadFonts';
 import {colors} from '../../styles/Colors';
 import {metrics} from '../../styles/Metrics';
 
-function Tabs({navigation}) {
-  const icons = [
+function Tabs() {
+  const [tab, setTab] = useState(0);
+  const items = [
     {
       name: 'home',
       text: 'home',
-      color: colors.primary,
+      handler: () => {
+        setTab(0);
+      },
+      active: tab == 0 ? true : false,
     },
     {
       name: 'book-open-variant',
       text: 'my books',
+      handler: () => {
+        setTab(1);
+      },
+      active: tab == 1 ? true : false,
     },
     {
       name: 'cart',
       text: 'store',
-      handler: () => alert(1),
+      handler: () => {
+        setTab(2);
+      },
+      active: tab == 2 ? true : false,
     },
     {
       name: 'pencil',
       text: 'write',
-      handler: () => alert(1),
+      handler: () => {
+        setTab(3);
+      },
+      active: tab == 3 ? true : false,
     },
     {
       name: 'menu',
       text: 'settings',
-      handler: () => alert(1),
+      handler: () => {
+        setTab(4);
+      },
+      active: tab == 4 ? true : false,
     },
   ];
   return (
     <>
       <TabsBox>
-        {icons.map(icon => (
-          <MenuIconBox>
+        {items.map(item => (
+          <MenuIconBox onPress={item.handler}>
             <Icon
-              name={icon.name}
+              name={item.name}
               size={metrics.widthPercentageToDP(30)}
-              color={icon.color ? icon.color : colors.gray3}
-              onPress={icon.handler ? icon.handler : null}
+              color={item.active ? colors.primary : colors.gray3}
+              active={item.active}
             />
-            <TextIcon>{icon.text}</TextIcon>
+            <TextIcon>{item.text}</TextIcon>
           </MenuIconBox>
         ))}
       </TabsBox>

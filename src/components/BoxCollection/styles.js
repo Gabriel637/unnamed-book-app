@@ -14,7 +14,7 @@ export const Container = styled.ScrollView`
 
 export const SectionContainer = styled.ScrollView`
   padding: 5px 10px 10px;
-  height: ${metrics.widthPercentageToDP(170)}px;
+  height: ${metrics.widthPercentageToDP(180)}px;
 `;
 
 export const Header = styled.View`

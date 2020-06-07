@@ -8,10 +8,10 @@ export const TabsBox = styled.View`
   flex-direction: row;
   justify-content: space-around;
   border-bottom-color: ${colors.primary};
-  border-bottom-width: 0.5;
+  border-bottom-width: 0.5px;
 `;
 
-export const MenuIconBox = styled.View`
+export const MenuIconBox = styled.TouchableOpacity`
   height: ${metrics.widthPercentageToDP(50)}px;
   width: ${metrics.widthPercentageToDP(65)}px;
   align-items: center;

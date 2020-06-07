@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Platform} from 'react-native';
 import {scrollHandler} from '../../utils/componentsActions';
+import {Animated} from 'react-native';
 import {
   Container,
   ReviewTitle,
@@ -14,6 +15,16 @@ import {
 
 function Reviews({navigation}) {
   const [line, setLine] = useState(false);
+  const [visibilityAnim] = useState(new Animated.Value(0));
+
+  useEffect(() => {
+    Animated.timing(visibilityAnim, {
+      toValue: line ? 1 : 0,
+      duration: 500,
+      useNativeDriver: true,
+    }).start();
+  }, [line]);
+
   const reviews = [
     {
       id: 1,
@@ -54,7 +65,14 @@ function Reviews({navigation}) {
 
   return (
     <Container enabled={Platform.OS === 'ios'} behavior="padding">
-      <ReviewTitleBox line={line}>
+      <ReviewTitleBox
+        line={line}
+        style={{
+          opacity: visibilityAnim.interpolate({
+            inputRange: [0, 1],
+            outputRange: [1, 1],
+          }),
+        }}>
         <ReviewTitle> Harry Potter's reviews</ReviewTitle>
       </ReviewTitleBox>
       <ContainerReviewsList

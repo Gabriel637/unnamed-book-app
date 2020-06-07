@@ -1,4 +1,5 @@
 import styled, {css} from 'styled-components/native';
+import {Animated} from 'react-native';
 import {colors} from '../../styles/Colors';
 import {metrics} from '../../styles/Metrics';
 
@@ -43,13 +44,13 @@ export const UserName = styled.Text`
   text-align: justify;
 `;
 
-export const ReviewTitleBox = styled.View`
+export const ReviewTitleBox = styled(Animated.View)`
   width: ${metrics.widthPercentageToDP(340)}px;
   ${({line}) =>
     line &&
     css`
       border-bottom-color: ${colors.primary};
-      border-bottom-width: 1;
+      border-bottom-width: 0.5px;
     `}
 `;
 

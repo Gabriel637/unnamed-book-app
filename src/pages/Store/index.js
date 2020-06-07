@@ -77,10 +77,10 @@ function Store({navigation}) {
             {item.author}
           </BookAuthor>
           <BookSection numberOfLines={1} ellipsizeMode="tail">
-            {item.sections[0]} {item.sections[1] && '- ' + item.sections[1]}{' '}
+            {item.sections[0]} {item.sections[1] && '- ' + item.sections[1]}
             {item.sections[2] && '- ' + item.sections[2]}
           </BookSection>
-          <BookDescription numberOfLines={7} ellipsizeMode="tail">
+          <BookDescription numberOfLines={6} ellipsizeMode="tail">
             {item.description}
           </BookDescription>
         </InfoBook>

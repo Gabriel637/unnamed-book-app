@@ -2,17 +2,18 @@ import {metrics} from '../../styles/Metrics';
 import {colors} from '../../styles/Colors';
 import styled from 'styled-components/native';
 
-export const BooksBox = styled.View.attrs({
-  shadowColor: colors.gray1,
+export const BookBox = styled.View.attrs({
+  shadowColor: colors.black,
   shadowOffset: {
     width: 0,
     height: 5,
   },
-  shadowOpacity: 0.25,
-  shadowRadius: 3.84,
+  shadowOpacity: 0.34,
+  shadowRadius: 6.27,
+  elevation: 10,
+})``;
 
-  elevation: 5,
-})`
+export const BookButton = styled.TouchableOpacity`
   margin: 0px 10px 10px 0;
   border-radius: 10px;
   justify-content: center;

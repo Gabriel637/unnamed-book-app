@@ -1,4 +1,3 @@
-import {Animated} from 'react-native';
 import {colors} from '../../styles/Colors';
 import {metrics} from '../../styles/Metrics';
 import styled, {css} from 'styled-components/native';

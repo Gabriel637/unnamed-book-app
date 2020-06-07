@@ -1,28 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {BooksBox, Title, SubTitle} from './styles';
+import {BookBox, BookButton, Title, SubTitle} from './styles';
 
-function Book({name, author}) {
+function Book({name, author, handler}) {
   return (
-    <>
-      <BooksBox>
+    <BookBox>
+      <BookButton onPress={handler}>
         <Title>{name}</Title>
         <SubTitle>
           {'\n'} {author}
         </SubTitle>
-      </BooksBox>
-    </>
+      </BookButton>
+    </BookBox>
   );
 }
 
 Book.propTypes = {
   name: PropTypes.string,
-  onPress: PropTypes.func,
+  handler: PropTypes.func,
 };
 
 Book.defaultProps = {
   name: '',
-  onPress: () => {},
+  handler: () => {},
 };
 
 export default Book;

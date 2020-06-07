@@ -7,6 +7,7 @@ import Home from './src/pages/Home';
 import MyBooks from './src/pages/MyBooks';
 import Store from './src/pages/Store';
 import Book from './src/pages/Book';
+import Reviews from './src/pages/Reviews';
 
 const Stack = createStackNavigator();
 
@@ -20,14 +21,11 @@ function App() {
           screenOptions={{
             headerShown: false,
           }}>
-          <Stack.Screen name="Book" component={Book} options={{title: ''}} />
-          <Stack.Screen name="Store" component={Store} options={{title: ''}} />
-          <Stack.Screen
-            name="MyBooks"
-            component={MyBooks}
-            options={{title: ''}}
-          />
-          <Stack.Screen name="Home" component={Home} options={{title: ''}} />
+          <Stack.Screen name="Reviews" component={Reviews} />
+          <Stack.Screen name="Store" component={Store} />
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Book" component={Book} />
+          <Stack.Screen name="MyBooks" component={MyBooks} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

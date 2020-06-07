@@ -25,22 +25,22 @@ export const Header = styled.View`
   border-bottom-color: ${colors.primary};
   border-bottom-width: 1;
   justify-content: space-between;
+  align-items: flex-end;
+`;
+
+export const SubTextButton = styled.TouchableOpacity`
+  flex-direction: row;
 `;
 
 export const SectionText = styled.Text`
   font-size: ${metrics.widthPercentageToDP(18)}px;
   text-transform: uppercase;
-  color: ${colors.gray6};
-  position: absolute;
-  bottom: 3;
+  color: ${colors.gray1};
 `;
 
 export const SubText = styled.Text`
-  font-size: ${metrics.widthPercentageToDP(10)}px;
+  font-size: ${metrics.widthPercentageToDP(11)}px;
   color: ${colors.link_blue};
-  position: absolute;
-  bottom: 3;
-  right: 0;
 `;
 
 export const TextStyled = styled.Text`

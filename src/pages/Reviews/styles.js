@@ -25,7 +25,6 @@ export const ReviewItem = styled.View.attrs({
   elevation: 5,
 })`
   width: ${metrics.widthPercentageToDP(340)}px;
-  height: ${metrics.widthPercentageToDP(172)}px;
   background: ${colors.white};
   border-radius: 7px;
   margin: 5px;

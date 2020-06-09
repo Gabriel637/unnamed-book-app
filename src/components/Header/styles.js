@@ -1,11 +1,20 @@
 import {metrics} from '../../styles/Metrics';
 import {colors} from '../../styles/Colors';
-import styled from 'styled-components/native';
+import {darkMode} from '../../utils/settingsApp';
+import styled, {css} from 'styled-components/native';
+
+const dark = darkMode();
 
 export const HeaderBox = styled.View`
-  margin-top: ${metrics.widthPercentageToDP(50)}px;
-  width: ${metrics.widthPercentageToDP(328)}px;
-  height: ${metrics.widthPercentageToDP(40)}px;
+  padding: ${metrics.widthPercentageToDP(20)}px
+    ${metrics.widthPercentageToDP(20)}px ${metrics.widthPercentageToDP(0)}px
+    ${metrics.widthPercentageToDP(20)}px;
+  width: ${metrics.widthPercentageToDP(360)}px;
+  height: ${metrics.widthPercentageToDP(90)}px;
+  ${dark &&
+    css`
+      background: ${colors.black};
+    `}
   align-self: center;
   flex-direction: row;
   align-items: center;

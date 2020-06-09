@@ -1,11 +1,18 @@
-import styled from 'styled-components/native';
 import {colors} from '../../styles/Colors';
 import {metrics} from '../../styles/Metrics';
+import {darkMode} from '../../utils/settingsApp';
+import styled, {css} from 'styled-components/native';
+
+const dark = darkMode();
 
 export const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
+  ${dark &&
+    css`
+      background: ${colors.gray1};
+    `}
 `;
 
 export const ContainerBooksList = styled.FlatList`
@@ -27,6 +34,10 @@ export const StoreItem = styled.View.attrs({
   width: ${metrics.widthPercentageToDP(340)}px;
   height: ${metrics.widthPercentageToDP(172)}px;
   background: ${colors.white};
+  ${dark &&
+    css`
+      background: ${colors.black};
+    `}
   border-radius: 7px;
   margin: 5px;
   padding: 5px 10px;
@@ -43,6 +54,10 @@ export const BookTitle = styled.Text`
   font-size: 20px;
   text-align: center;
   color: ${colors.gray1};
+  ${dark &&
+    css`
+      color: ${colors.white};
+    `}
 `;
 
 export const BookAuthor = styled.Text`
@@ -56,10 +71,18 @@ export const BookSection = styled.Text`
   color: ${colors.blue};
   text-transform: capitalize;
   text-align: center;
+  ${dark &&
+    css`
+      color: ${colors.light_blue};
+    `}
 `;
 
 export const BookDescription = styled.Text`
   font-size: 16px;
   color: ${colors.gray1};
+  ${dark &&
+    css`
+      color: ${colors.white};
+    `}
   text-align: justify;
 `;

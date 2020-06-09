@@ -1,12 +1,19 @@
-import styled, {css} from 'styled-components/native';
 import {Animated} from 'react-native';
 import {colors} from '../../styles/Colors';
 import {metrics} from '../../styles/Metrics';
+import {darkMode} from '../../utils/settingsApp';
+import styled, {css} from 'styled-components/native';
+
+const dark = darkMode();
 
 export const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
+  ${dark &&
+    css`
+      background: ${colors.black};
+    `}
 `;
 
 export const ContainerReviewsList = styled.FlatList`
@@ -26,6 +33,10 @@ export const ReviewItem = styled.View.attrs({
 })`
   width: ${metrics.widthPercentageToDP(340)}px;
   background: ${colors.white};
+  ${dark &&
+    css`
+      background: ${colors.gray1};
+    `}
   border-radius: 7px;
   margin: 5px;
   padding: 5px 10px;
@@ -34,6 +45,10 @@ export const ReviewItem = styled.View.attrs({
 export const ReviewDescription = styled.Text`
   font-size: 16px;
   color: ${colors.gray1};
+  ${dark &&
+    css`
+      color: ${colors.white};
+    `}
   text-align: justify;
 `;
 

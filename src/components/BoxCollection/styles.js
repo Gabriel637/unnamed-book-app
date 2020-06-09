@@ -1,6 +1,9 @@
 import {metrics} from '../../styles/Metrics';
 import {colors} from '../../styles/Colors';
+import {darkMode} from '../../utils/settingsApp';
 import styled, {css} from 'styled-components/native';
+
+const dark = darkMode();
 
 export const Container = styled.ScrollView`
   ${({hide}) =>
@@ -8,8 +11,13 @@ export const Container = styled.ScrollView`
     css`
       display: none;
     `}
-  margin: 0px 0px 10px;
+  padding: 0px 0px 10px;
   background-color: ${colors.white};
+  ${dark &&
+    css`
+      background: ${colors.black};
+      border-bottom-width: 0.3px;
+    `}
 `;
 
 export const SectionContainer = styled.ScrollView`
@@ -35,7 +43,7 @@ export const SubTextButton = styled.TouchableOpacity`
 export const SectionText = styled.Text`
   font-size: ${metrics.widthPercentageToDP(18)}px;
   text-transform: uppercase;
-  color: ${colors.gray1};
+  color: ${colors.gray3};
 `;
 
 export const SubText = styled.Text`

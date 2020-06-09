@@ -8,7 +8,7 @@ function MiniTabs({items}) {
       <TabsBox>
         {items.map(item => (
           <TextBox active={item.active} onPress={item.handler}>
-            <TextIcon>{item.name}</TextIcon>
+            <TextIcon active={item.active}>{item.name}</TextIcon>
           </TextBox>
         ))}
       </TabsBox>

@@ -1,6 +1,9 @@
 import {colors} from '../../styles/Colors';
 import {metrics} from '../../styles/Metrics';
+import {darkMode} from '../../utils/settingsApp';
 import styled, {css} from 'styled-components/native';
+
+const dark = darkMode();
 
 export const TabsBox = styled.View.attrs({
   shadowColor: colors.gray1,
@@ -23,6 +26,10 @@ export const TabsBox = styled.View.attrs({
     css`
       display: none;
     `}
+  ${dark &&
+    css`
+      background: ${colors.black};
+    `}
 `;
 
 export const TextBox = styled.TouchableOpacity`
@@ -31,15 +38,21 @@ export const TextBox = styled.TouchableOpacity`
   margin: 0px 10px;
   align-items: center;
   justify-content: center;
+  border-bottom-width: 3px;
   ${({active}) =>
     active &&
     css`
       border-bottom-color: ${colors.primary};
-      border-bottom-width: 1;
+      border-bottom-width: 3px;
     `}
 `;
 
 export const TextIcon = styled.Text`
-  color: ${colors.primary};
+  color: ${colors.gray3};
+  ${({active}) =>
+    active &&
+    css`
+      color: ${colors.primary};
+    `}
   text-transform: uppercase;
 `;

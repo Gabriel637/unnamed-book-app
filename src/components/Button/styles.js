@@ -25,7 +25,6 @@ export const Text = styled.Text`
   font-size: 22px;
   color: ${colors.white};
   text-align: center;
-  text-transform: uppercase;
 `;
 
 export const ButtonBox = styled.View.attrs({
@@ -37,4 +36,6 @@ export const ButtonBox = styled.View.attrs({
   shadowOpacity: 0.34,
   shadowRadius: 6.27,
   elevation: 10,
-})``;
+})`
+  margin-top: ${metrics.widthPercentageToDP(25)}px;
+`;

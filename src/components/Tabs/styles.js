@@ -1,6 +1,9 @@
 import {colors} from '../../styles/Colors';
 import {metrics} from '../../styles/Metrics';
-import styled from 'styled-components/native';
+import {darkMode} from '../../utils/settingsApp';
+import styled, {css} from 'styled-components/native';
+
+const dark = darkMode();
 
 export const TabsBox = styled.View`
   padding: ${metrics.widthPercentageToDP(5)}px 0;
@@ -9,6 +12,10 @@ export const TabsBox = styled.View`
   justify-content: space-around;
   border-bottom-color: ${colors.primary};
   border-bottom-width: 0.5px;
+  ${dark &&
+    css`
+      background: ${colors.black};
+    `}
 `;
 
 export const MenuIconBox = styled.TouchableOpacity`

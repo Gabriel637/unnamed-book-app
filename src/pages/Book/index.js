@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, {useState} from 'react';
-import {Platform} from 'react-native';
+
 import {scrollHandler} from '../../utils/componentsActions';
 import DemoBook from '../../components/DemoBook';
 import Button from '../../components/Button';
@@ -37,7 +37,7 @@ function Book({navigation}) {
   };
 
   return (
-    <Container enabled={Platform.OS === 'ios'} behavior="padding">
+    <Container>
       <BookItem>
         <DemoBook name={book.name} author={book.author} />
         <InfoBook>

@@ -17,7 +17,7 @@ export const Button = styled.TouchableOpacity`
   ${({outline}) =>
     outline &&
     css`
-      background-color: ${colors.link_blue};
+      background-color: ${colors.blue};
     `}
 `;
 

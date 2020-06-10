@@ -8,24 +8,26 @@ import MyBooks from './src/pages/MyBooks';
 import Store from './src/pages/Store';
 import Book from './src/pages/Book';
 import Reviews from './src/pages/Reviews';
-import Login from './src/pages/Login/Email';
+import Login from './src/pages/Login';
+import Register from './src/pages/Register';
 
 const Stack = createStackNavigator();
 
 function App() {
   return (
     <>
-      {/*       <Header />
+      {/* <Header />
       <Tabs /> */}
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
             headerShown: false,
           }}>
+          <Stack.Screen name="Register" component={Register} />
           <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Book" component={Book} />
           <Stack.Screen name="Reviews" component={Reviews} />
           <Stack.Screen name="MyBooks" component={MyBooks} />
-          <Stack.Screen name="Book" component={Book} />
           <Stack.Screen name="Store" component={Store} />
           <Stack.Screen name="Home" component={Home} />
         </Stack.Navigator>

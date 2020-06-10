@@ -1,11 +1,17 @@
-import {colors} from '../../../styles/Colors';
-import {metrics} from '../../../styles/Metrics';
-import {darkMode} from '../../../utils/settingsApp';
+import {colors} from '../../styles/Colors';
+import {metrics} from '../../styles/Metrics';
+import {darkMode} from '../../utils/settingsApp';
 import styled, {css} from 'styled-components/native';
 
 const dark = darkMode();
 
-export const Container = styled.KeyboardAvoidingView`
+export const Container = styled.KeyboardAvoidingView.attrs(
+  Platform.OS === 'ios' && {
+    behavior: 'padding',
+    keyboardVerticalOffset: metrics.widthPercentageToDP(10),
+    enabled: true,
+  },
+)`
   flex: 1;
   padding: ${metrics.widthPercentageToDP(50)}px 0;
   justify-content: center;

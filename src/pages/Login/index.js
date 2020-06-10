@@ -1,19 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {Platform} from 'react-native';
-import {
-  Container,
-  SubText,
-  LogoTitle,
-  RegisterBox,
-  RegisterText,
-} from './styles';
-import TextInput from '../../../components/TextInput';
-import Button from '../../../components/Button';
 
-function Email({navigation}) {
+import {Container, SubText, LogoTitle} from './styles';
+import TextInput from '../../components/TextInput';
+import Button from '../../components/Button';
+
+function Login({navigation}) {
   return (
-    <Container enabled={Platform.OS === 'ios'} behavior="padding">
+    <Container>
       <LogoTitle>Liber</LogoTitle>
       <TextInput label="Email" />
       <TextInput label="Password" passwordInput />
@@ -25,9 +19,9 @@ function Email({navigation}) {
   );
 }
 
-export default Email;
+export default Login;
 
-Email.propTypes = {
+Login.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
     getParam: PropTypes.func,
@@ -35,6 +29,6 @@ Email.propTypes = {
   }),
 };
 
-Email.defaultProps = {
+Login.defaultProps = {
   navigation: {},
 };

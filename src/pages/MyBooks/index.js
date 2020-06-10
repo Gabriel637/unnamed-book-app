@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, {useState} from 'react';
-import {Platform} from 'react-native';
+
 import DemoBook from '../../components/DemoBook';
 import MiniTabs from '../../components/MiniTabs';
 import {
@@ -118,7 +118,7 @@ function MyBooks({navigation}) {
     },
   ];
   return (
-    <Container enabled={Platform.OS === 'ios'} behavior="padding">
+    <Container>
       <MiniTabs items={items} />
       <ContainerBooksList
         numColumns={columns}

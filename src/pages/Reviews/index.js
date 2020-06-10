@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, {useState, useEffect} from 'react';
-import {Platform} from 'react-native';
 import {scrollHandler} from '../../utils/componentsActions';
 import {Animated} from 'react-native';
 import {
@@ -64,7 +63,7 @@ function Reviews({navigation}) {
   };
 
   return (
-    <Container enabled={Platform.OS === 'ios'} behavior="padding">
+    <Container>
       <ReviewTitleBox
         line={line}
         style={{

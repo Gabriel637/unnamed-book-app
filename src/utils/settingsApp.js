@@ -1,4 +1,4 @@
-const colorMode = 'dark';
+const colorMode = 'white';
 
 export const darkMode = () => {
   if (colorMode === 'dark') {

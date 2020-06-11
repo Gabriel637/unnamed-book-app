@@ -48,7 +48,7 @@ export const SectionText = styled.Text`
 
 export const SubText = styled.Text`
   font-size: ${metrics.widthPercentageToDP(11)}px;
-  color: ${colors.link_blue};
+  color: ${colors.blue};
 `;
 
 export const TextStyled = styled.Text`

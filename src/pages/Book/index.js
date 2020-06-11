@@ -39,7 +39,7 @@ function Book({navigation}) {
   return (
     <Container>
       <BookItem>
-        <DemoBook name={book.name} author={book.author} />
+        <DemoBook book={book} />
         <InfoBook>
           <BookTitle>{book.name}</BookTitle>
           <BookAuthor numberOfLines={1} ellipsizeMode="tail">

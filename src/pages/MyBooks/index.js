@@ -90,7 +90,7 @@ function MyBooks({navigation}) {
   };
 
   const book = ({item}) => {
-    return <DemoBook name={item.name} author={item.author} />;
+    return <DemoBook book={item} />;
   };
   const columns = 3;
 

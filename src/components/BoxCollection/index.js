@@ -25,8 +25,7 @@ function BoxCollection({books, section}) {
     let booksCollection = [];
     books.map(book =>
       book.sections.map(
-        bookSection =>
-          bookSection === section.name && booksCollection.push(book),
+        bookSection => bookSection === section && booksCollection.push(book),
       ),
     );
     booksCollection.length === 0
@@ -37,7 +36,7 @@ function BoxCollection({books, section}) {
   return (
     <Container hide={hide}>
       <Header>
-        <SectionText>{section.name}</SectionText>
+        <SectionText>{section}</SectionText>
         <SubTextButton>
           <SubText>SEE ALL</SubText>
           <Icon

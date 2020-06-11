@@ -38,7 +38,7 @@ function Home({navigation}) {
   return (
     <Container>
       {sections.map(section => (
-        <BoxCollection books={books} section={section} />
+        <BoxCollection books={books} section={section.name} />
       ))}
     </Container>
   );

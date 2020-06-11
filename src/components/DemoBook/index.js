@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {BookBox, BookButton, Title, SubTitle} from './styles';
 
-function Book({name, author, handler}) {
+function Book({book, handler}) {
   return (
     <BookBox>
       <BookButton onPress={handler}>
-        <Title>{name}</Title>
+        <Title>{book.name}</Title>
         <SubTitle>
-          {'\n'} {author}
+          {'\n'} {book.author}
         </SubTitle>
       </BookButton>
     </BookBox>

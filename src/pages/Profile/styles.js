@@ -55,7 +55,7 @@ export const ProfileTitle = styled.Text`
   font-size: 20px;
   text-align: center;
   text-transform: capitalize;
-  color: ${colors.gray3};
+  color: ${colors.gray1};
   ${dark &&
     css`
       color: ${colors.white};

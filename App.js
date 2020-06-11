@@ -10,19 +10,21 @@ import Book from './src/pages/Book';
 import Reviews from './src/pages/Reviews';
 import Login from './src/pages/Login';
 import Register from './src/pages/Register';
+import Profile from './src/pages/Profile';
 
 const Stack = createStackNavigator();
 
 function App() {
   return (
     <>
-      {/* <Header />
-      <Tabs /> */}
+      <Header />
+      <Tabs />
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
             headerShown: false,
           }}>
+          <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen name="Register" component={Register} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Book" component={Book} />

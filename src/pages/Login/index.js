@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-
 import {Container, SubText, LogoTitle} from './styles';
 import TextInput from '../../components/TextInput';
 import Button from '../../components/Button';

@@ -14,7 +14,7 @@ function Tabs() {
       handler: () => {
         setTab(0);
       },
-      active: tab == 0 ? true : false,
+      active: tab === 0 ? true : false,
     },
     {
       name: 'book-open-variant',
@@ -22,7 +22,7 @@ function Tabs() {
       handler: () => {
         setTab(1);
       },
-      active: tab == 1 ? true : false,
+      active: tab === 1 ? true : false,
     },
     {
       name: 'cart',
@@ -30,7 +30,7 @@ function Tabs() {
       handler: () => {
         setTab(2);
       },
-      active: tab == 2 ? true : false,
+      active: tab === 2 ? true : false,
     },
     {
       name: 'pencil',
@@ -38,7 +38,7 @@ function Tabs() {
       handler: () => {
         setTab(3);
       },
-      active: tab == 3 ? true : false,
+      active: tab === 3 ? true : false,
     },
     {
       name: 'menu',
@@ -46,7 +46,7 @@ function Tabs() {
       handler: () => {
         setTab(4);
       },
-      active: tab == 4 ? true : false,
+      active: tab === 4 ? true : false,
     },
   ];
   return (

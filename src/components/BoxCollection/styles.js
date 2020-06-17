@@ -11,7 +11,7 @@ export const Container = styled.ScrollView`
     css`
       display: none;
     `}
-  padding: 0px 0px 10px;
+  margin: 0px 0px 10px;
   background-color: ${colors.white};
   ${dark &&
   css`

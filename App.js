@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import {ThemeProvider} from 'styled-components';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { ThemeProvider } from 'styled-components';
 import Header from './src/components/Header';
 import Tabs from './src/components/Tabs';
 import Home from './src/pages/Home';
@@ -16,11 +16,11 @@ import UploadBook from './src/pages/WriteBook/Upload';
 import NameBook from './src/pages/WriteBook/Name';
 import DescriptionBook from './src/pages/WriteBook/Description';
 import LanguageBook from './src/pages/WriteBook/Language';
-import {setCustomText} from 'react-native-global-props';
+import { setCustomText } from 'react-native-global-props';
 
 const Stack = createStackNavigator();
 
-const fontDefaultName = 'OpenSans';
+const fontDefaultName = 'Baskerville';
 
 const globalTheme = {
   primary: 'red',
@@ -34,7 +34,7 @@ const globalTheme = {
 
 const customText = {
   style: {
-    fontFamily: 'OpenSans-Regular',
+    fontFamily: 'EuphemiaUCAS',
   },
 };
 
@@ -50,14 +50,14 @@ function App() {
           screenOptions={{
             headerShown: false,
           }}>
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Book" component={Book} />
           <Stack.Screen name="DescriptionBook" component={DescriptionBook} />
           <Stack.Screen name="LanguageBook" component={LanguageBook} />
           <Stack.Screen name="NameBook" component={NameBook} />
           <Stack.Screen name="UploadBook" component={UploadBook} />
           <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen name="Register" component={Register} />
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Book" component={Book} />
           <Stack.Screen name="Reviews" component={Reviews} />
           <Stack.Screen name="MyBooks" component={MyBooks} />
           <Stack.Screen name="Store" component={Store} />

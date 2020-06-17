@@ -1,25 +1,27 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {Button, Text, ButtonBox} from './styles';
+import { ButtonTouchable, Text, ButtonBox } from './styles';
 
-function Tabs({color, disabled, text, outline}) {
+function Button({ color, disabled, text, outline, handler }) {
   return (
     <ButtonBox>
-      <Button color={color} disabled={disabled} outline={outline}>
+      <ButtonTouchable color={color} disabled={disabled} outline={outline} onPress={handler}>
         <Text>{text}</Text>
-      </Button>
+      </ButtonTouchable>
     </ButtonBox>
   );
 }
 
-Tabs.propTypes = {
+Button.propTypes = {
+
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
     getParam: PropTypes.func,
     setParams: PropTypes.func,
   }),
+  handler: PropTypes.func,
 };
 
-Tabs.defaultProps = {navigation: {}};
+Button.defaultProps = { navigation: {} };
 
-export default Tabs;
+export default Button;

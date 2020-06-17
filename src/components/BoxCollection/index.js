@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import DemoBook from '../../components/DemoBook';
-import {metrics} from '../../styles/Metrics';
-import {colors} from '../../styles/Colors';
-import {MaterialCommunityIcons as Icon} from '../../styles/LoadFonts';
+import { metrics } from '../../styles/Metrics';
+import { colors } from '../../styles/Colors';
+import { MaterialCommunityIcons as Icon } from '../../styles/LoadFonts';
 import {
   Container,
   Header,
@@ -13,7 +13,7 @@ import {
   SubTextButton,
 } from './styles';
 
-function BoxCollection({books, section}) {
+function BoxCollection({ books, section }) {
   const [booksList, setBooksList] = useState([]);
   const [hide, setHide] = useState(false);
 
@@ -31,6 +31,7 @@ function BoxCollection({books, section}) {
     booksCollection.length === 0
       ? setHide(true)
       : setBooksList(booksCollection);
+    alert(booksCollection[0]);
   };
 
   return (
@@ -47,9 +48,9 @@ function BoxCollection({books, section}) {
         </SubTextButton>
       </Header>
       <SectionContainer horizontal showsHorizontalScrollIndicator={false}>
-        {booksList.map(book => (
+        {/* {booksList.map(book => (
           <DemoBook name={book.name} author={book.author} />
-        ))}
+        ))} */}
       </SectionContainer>
     </Container>
   );
@@ -62,7 +63,7 @@ BoxCollection.propTypes = {
 
 BoxCollection.defaultProps = {
   name: '',
-  onPress: () => {},
+  onPress: () => { },
 };
 
 export default BoxCollection;

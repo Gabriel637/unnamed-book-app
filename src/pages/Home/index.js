@@ -1,13 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import BoxCollection from '../../components/BoxCollection';
-import {Container} from './styles';
+import { Container } from './styles';
 
-function Home({navigation}) {
+function Home({ navigation }) {
   const sections = [
-    {
-      name: 'top 100',
-    },
     {
       name: 'romantic',
     },
@@ -26,12 +23,12 @@ function Home({navigation}) {
     {
       name: 'Harry Potter',
       author: 'J.K Rowling',
-      sections: ['top 100', 'thriller'],
+      sections: ['thriller'],
     },
     {
       name: 'livrinho',
       author: 'gabriel amorim',
-      sections: ['top 100', 'romantic'],
+      sections: ['romantic'],
     },
   ];
   return (

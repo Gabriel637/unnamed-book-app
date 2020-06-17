@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import React, {useState, useEffect} from 'react';
-import {scrollHandler} from '../../utils/componentsActions';
-import {Animated} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { scrollHandler } from '../../utils/componentsActions';
+import { Animated } from 'react-native';
 import {
   Container,
   ReviewTitle,
@@ -12,7 +12,7 @@ import {
   ReviewTitleBox,
 } from './styles';
 
-function Reviews({navigation}) {
+function Reviews({ navigation }) {
   const [line, setLine] = useState(false);
   const [visibilityAnim] = useState(new Animated.Value(0));
 
@@ -49,7 +49,7 @@ function Reviews({navigation}) {
     );
   };
 
-  const review = ({item}) => {
+  const review = ({ item }) => {
     return (
       <ReviewItem>
         <UserName numberOfLines={1} ellipsizeMode="tail">

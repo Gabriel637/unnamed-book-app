@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ProfilePic from '../../components/ProfilePic';
 import DemoBook from '../../components/DemoBook';
-import {metrics} from '../../styles/Metrics';
-import {colors} from '../../styles/Colors';
-import {darkMode} from '../../utils/settingsApp';
-import {MaterialCommunityIcons as Icon} from '../../styles/LoadFonts';
+import { metrics } from '../../styles/Metrics';
+import { colors } from '../../styles/Colors';
+import { darkMode } from '../../utils/settingsApp';
+import { MaterialCommunityIcons as Icon } from '../../styles/LoadFonts';
 import {
   Container,
-  Header,
+  HeaderProfile,
   ProfileItem,
   InfoProfile,
   ProfileTitle,
@@ -18,7 +18,7 @@ import {
   ProfileInfoText,
 } from './styles';
 
-function Profile({navigation}) {
+function Profile({ navigation }) {
   const dark = darkMode();
   const user = {
     id: 1,
@@ -45,7 +45,7 @@ function Profile({navigation}) {
 
   return (
     <Container>
-      <Header>
+      <HeaderProfile>
         <ProfilePic></ProfilePic>
         <IconBox>
           <Icon
@@ -56,7 +56,7 @@ function Profile({navigation}) {
             onPress={null}
           />
         </IconBox>
-      </Header>
+      </HeaderProfile>
       <ProfileItem>
         <ProfileSubText>Name</ProfileSubText>
         <InfoProfile>

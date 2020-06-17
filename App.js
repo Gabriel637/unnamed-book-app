@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ThemeProvider } from 'styled-components';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Header from './src/components/Header';
-import Tabs from './src/components/Tabs';
 import Home from './src/pages/Home';
 import MyBooks from './src/pages/MyBooks';
 import Store from './src/pages/Store';
@@ -18,6 +18,7 @@ import DescriptionBook from './src/pages/WriteBook/Description';
 import LanguageBook from './src/pages/WriteBook/Language';
 import { setCustomText } from 'react-native-global-props';
 
+const Tab = createMaterialTopTabNavigator();
 const Stack = createStackNavigator();
 
 const fontDefaultName = 'Baskerville';
@@ -42,29 +43,25 @@ setCustomText(customText);
 
 function App() {
   return (
-    <ThemeProvider theme={globalTheme}>
+    < ThemeProvider theme={globalTheme} >
       <Header />
-      <Tabs />
       <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerShown: false,
-          }}>
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Book" component={Book} />
-          <Stack.Screen name="DescriptionBook" component={DescriptionBook} />
-          <Stack.Screen name="LanguageBook" component={LanguageBook} />
-          <Stack.Screen name="NameBook" component={NameBook} />
-          <Stack.Screen name="UploadBook" component={UploadBook} />
-          <Stack.Screen name="Profile" component={Profile} />
-          <Stack.Screen name="Register" component={Register} />
-          <Stack.Screen name="Reviews" component={Reviews} />
-          <Stack.Screen name="MyBooks" component={MyBooks} />
-          <Stack.Screen name="Store" component={Store} />
-          <Stack.Screen name="Home" component={Home} />
-        </Stack.Navigator>
+        <Tab.Navigator>
+          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="Store" component={Store} />
+          <Tab.Screen name="UploadBook" component={UploadBook} />
+          <Tab.Screen name="Profile" component={Profile} />
+        </Tab.Navigator>
+        <Stack.Screen name="Book" component={Book} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="DescriptionBook" component={DescriptionBook} />
+        <Stack.Screen name="LanguageBook" component={LanguageBook} />
+        <Stack.Screen name="NameBook" component={NameBook} />
+        <Stack.Screen name="Reviews" component={Reviews} />
+        <Stack.Screen name="MyBooks" component={MyBooks} />
       </NavigationContainer>
-    </ThemeProvider>
+    </ThemeProvider >
   );
 }
 

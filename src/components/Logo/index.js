@@ -6,7 +6,7 @@ import { colors } from '../../styles/Colors';
 function Logo({ color }) {
     return (
         <LogoBox >
-            <LogoTitle color={color}>Liber</LogoTitle>
+            <LogoTitle color={color}>Louvain</LogoTitle>
             <LogoSymbol color={color}>er</LogoSymbol>
         </LogoBox>
     );

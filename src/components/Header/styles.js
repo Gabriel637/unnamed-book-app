@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components/native';
 const dark = darkMode();
 
 export const HeaderBox = styled.View`
-  padding: ${metrics.widthPercentageToDP(20)}px
+  padding: ${metrics.widthPercentageToDP(30)}px
     ${metrics.widthPercentageToDP(20)}px ${metrics.widthPercentageToDP(0)}px
     ${metrics.widthPercentageToDP(20)}px;
   width: ${metrics.widthPercentageToDP(360)}px;

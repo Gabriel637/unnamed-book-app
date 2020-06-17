@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
-import React, {useState} from 'react';
-
+import React, { useState } from 'react';
 import DemoBook from '../../components/DemoBook';
 import MiniTabs from '../../components/MiniTabs';
 import {
@@ -14,7 +13,7 @@ import {
   BookSection,
 } from './styles';
 
-function Store({navigation}) {
+function Store({ navigation }) {
   const [tab, setTab] = useState(1);
   const books = [
     {
@@ -65,7 +64,7 @@ function Store({navigation}) {
     );
   };
 
-  const book = ({item}) => {
+  const book = ({ item }) => {
     return (
       <StoreItem>
         <DemoBook book={book} />
@@ -88,32 +87,9 @@ function Store({navigation}) {
     );
   };
 
-  const items = [
-    {
-      name: 'Top 100',
-      handler: () => {
-        setTab(0);
-      },
-      active: tab == 0 ? true : false,
-    },
-    {
-      name: 'Newest',
-      handler: () => {
-        setTab(1);
-      },
-      active: tab == 1 ? true : false,
-    },
-    {
-      name: 'Genres',
-      handler: () => {
-        setTab(2);
-      },
-      active: tab == 2 ? true : false,
-    },
-  ];
+
   return (
     <Container>
-      <MiniTabs items={items} />
       <ContainerBooksList
         showsVerticalScrollIndicator={false}
         data={books}

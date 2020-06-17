@@ -31,7 +31,6 @@ function BoxCollection({ books, section }) {
     booksCollection.length === 0
       ? setHide(true)
       : setBooksList(booksCollection);
-    alert(booksCollection[0]);
   };
 
   return (

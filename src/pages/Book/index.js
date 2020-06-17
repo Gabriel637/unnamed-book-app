@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
-import React, {useState} from 'react';
-
-import {scrollHandler} from '../../utils/componentsActions';
+import React, { useState } from 'react';
+import { scrollHandler } from '../../utils/componentsActions';
 import DemoBook from '../../components/DemoBook';
 import Button from '../../components/Button';
-import {metrics} from '../../styles/Metrics';
-import {colors} from '../../styles/Colors';
-import {MaterialCommunityIcons as Icon} from '../../styles/LoadFonts';
+import { metrics } from '../../styles/Metrics';
+import { colors } from '../../styles/Colors';
+import { MaterialCommunityIcons as Icon } from '../../styles/LoadFonts';
 import {
   Container,
   BookItem,
@@ -22,7 +21,7 @@ import {
   ReviewText,
 } from './styles';
 
-function Book({navigation}) {
+function Book({ navigation }) {
   const [line, setLine] = useState(false);
   const book = {
     id: 1,

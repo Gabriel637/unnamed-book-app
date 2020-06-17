@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
-import React, {useState} from 'react';
-
+import React, { useState } from 'react';
 import DemoBook from '../../components/DemoBook';
 import MiniTabs from '../../components/MiniTabs';
 import {
@@ -10,7 +9,7 @@ import {
   TextAdvice,
 } from './styles';
 
-function MyBooks({navigation}) {
+function MyBooks({ navigation }) {
   const [tab, setTab] = useState(1);
   const books = [
     /* 
@@ -89,7 +88,7 @@ function MyBooks({navigation}) {
     );
   };
 
-  const book = ({item}) => {
+  const book = ({ item }) => {
     return <DemoBook book={item} />;
   };
   const columns = 3;

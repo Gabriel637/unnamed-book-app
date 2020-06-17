@@ -1,7 +1,7 @@
-import {colors} from '../../styles/Colors';
-import {metrics} from '../../styles/Metrics';
-import {darkMode} from '../../utils/settingsApp';
-import styled, {css} from 'styled-components/native';
+import { colors } from '../../styles/Colors';
+import { metrics } from '../../styles/Metrics';
+import { darkMode } from '../../utils/settingsApp';
+import styled, { css } from 'styled-components/native';
 
 const dark = darkMode();
 
@@ -9,12 +9,12 @@ export const Container = styled.ScrollView`
   flex: 1;
   padding: 10px 20px;
   ${dark &&
-    css`
+  css`
       background: ${colors.black};
     `}
 `;
 
-export const Header = styled.View`
+export const HeaderProfile = styled.View`
   flex-direction: row;
   justify-content: space-between;
 `;
@@ -46,7 +46,7 @@ export const ProfileInfoText = styled.Text`
   align-self: flex-start;
   color: ${colors.gray1};
   ${dark &&
-    css`
+  css`
       color: ${colors.white};
     `}
 `;
@@ -57,7 +57,7 @@ export const ProfileTitle = styled.Text`
   text-transform: capitalize;
   color: ${colors.gray1};
   ${dark &&
-    css`
+  css`
       color: ${colors.white};
     `}
 `;
@@ -66,7 +66,7 @@ export const ProfileSection = styled.Text`
   font-size: 20px;
   color: ${colors.blue};
   ${dark &&
-    css`
+  css`
       color: ${colors.light_blue};
     `}
   text-transform: capitalize;
@@ -77,7 +77,7 @@ export const ProfileInfo = styled.Text`
   font-size: 16px;
   color: ${colors.gray1};
   ${dark &&
-    css`
+  css`
       color: ${colors.white};
     `}
   text-align: center;

@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-
 import BoxCollection from '../../components/BoxCollection';
 import {Container} from './styles';
 
@@ -37,7 +36,7 @@ function Home({navigation}) {
   ];
   return (
     <Container>
-      {sections.map(section => (
+      {sections.map((section) => (
         <BoxCollection books={books} section={section.name} />
       ))}
     </Container>

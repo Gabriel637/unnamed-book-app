@@ -1,20 +1,20 @@
-import {colors} from '../../styles/Colors';
-import {metrics} from '../../styles/Metrics';
-import styled, {css} from 'styled-components/native';
+import { colors } from '../../styles/Colors';
+import { metrics } from '../../styles/Metrics';
+import styled, { css } from 'styled-components/native';
 
 export const Button = styled.TouchableOpacity`
   background-color: ${colors.primary};
   border-radius: 5px;
-  justify-content: center;
+  padding: ${metrics.widthPercentageToDP(6)}px;
   align-items: center;
   width: ${metrics.widthPercentageToDP(328)}px;
   height: ${metrics.widthPercentageToDP(45)}px;
-  ${({disabled}) =>
+  ${({ disabled }) =>
     disabled &&
     css`
       opacity: 0.4;
     `}
-  ${({outline}) =>
+  ${({ outline }) =>
     outline &&
     css`
       background-color: ${colors.blue};

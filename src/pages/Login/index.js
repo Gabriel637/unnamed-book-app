@@ -17,8 +17,8 @@ function Login({ navigation }) {
       <FormBox>
         <TextInput label="Email" />
         <TextInput label="Password" passwordInput />
-        <Button text="Log In" />
-        <SubText onPress={() => alert(1)}>Enter as guest</SubText>
+        <Button text="Log In" handler={() => navigation.navigate('Home')} />
+        <SubText onPress={() => navigation.navigate('Login')}>Enter as guest</SubText>
         <SubText>Forgot password</SubText>
         <SubText>Don't have an account yet? Sign Up</SubText>
       </FormBox>

@@ -18,7 +18,7 @@ function Login({ navigation }) {
         <TextInput label="UserName" />
         <TextInput label="Email" />
         <TextInput label="Password" passwordInput />
-        <Button text="Sign Up" />
+        <Button text="Sign Up" handler={() => navigation.navigate('Login')} />
         <SubText>Signing up you agree to terms and registers</SubText>
       </FormBox>
     </Container>

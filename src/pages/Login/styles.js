@@ -1,7 +1,7 @@
-import {colors} from '../../styles/Colors';
-import {metrics} from '../../styles/Metrics';
-import {darkMode} from '../../utils/settingsApp';
-import styled, {css} from 'styled-components/native';
+import { colors } from '../../styles/Colors';
+import { metrics } from '../../styles/Metrics';
+import { darkMode } from '../../utils/settingsApp';
+import styled, { css } from 'styled-components/native';
 
 const dark = darkMode();
 
@@ -17,16 +17,9 @@ export const Container = styled.KeyboardAvoidingView.attrs(
   justify-content: center;
   align-items: center;
   ${dark &&
-    css`
+  css`
       background: ${colors.black};
     `}
-`;
-
-export const LogoTitle = styled.Text`
-  font-size: ${metrics.widthPercentageToDP(32)}px;
-  text-transform: uppercase;
-  color: ${colors.primary};
-  align-self: center;
 `;
 
 export const InputBox = styled.View`

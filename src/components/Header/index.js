@@ -1,14 +1,15 @@
 import React from 'react';
-import {colors} from '../../styles/Colors';
-import {metrics} from '../../styles/Metrics';
-import {MaterialCommunityIcons as Icon} from '../../styles/LoadFonts';
-import {HeaderBox, LogoTitle} from './styles';
+import { colors } from '../../styles/Colors';
+import { metrics } from '../../styles/Metrics';
+import Logo from '../Logo';
+import { MaterialCommunityIcons as Icon } from '../../styles/LoadFonts';
+import { HeaderBox } from './styles';
 
-function Header({}) {
+function Header({ }) {
   return (
     <>
       <HeaderBox>
-        <LogoTitle>Liber</LogoTitle>
+        <Logo />
         <Icon
           name="magnify"
           size={metrics.widthPercentageToDP(30)}

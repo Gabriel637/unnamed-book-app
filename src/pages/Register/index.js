@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {Container, LogoTitle} from './styles';
+import { Container } from './styles';
 import TextInput from '../../components/TextInput';
+import Logo from '../../components/Logo';
 import Button from '../../components/Button';
 
-function Register({navigation}) {
+function Register({ navigation }) {
   return (
     <Container>
-      <LogoTitle>Liber</LogoTitle>
+      <Logo />
       <TextInput label="UserName" />
       <TextInput label="Email" />
       <TextInput label="Password" passwordInput />

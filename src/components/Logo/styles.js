@@ -8,18 +8,26 @@ export const LogoTitle = styled.Text`
   font-size: ${metrics.widthPercentageToDP(36)}px;
   font-family: Papyrus;
   text-transform: uppercase;
-  color: ${colors.primary};
+  ${({ color }) =>
+    color &&
+    css`
+      color: ${color};
+    `}
   align-self: center;
 `;
 
 export const LogoSymbol = styled.Text`
-  font-size: ${metrics.widthPercentageToDP(32)}px;
-  font-family: BodoniOrnamentsITCTT;
-  text-transform: uppercase;
-  color: ${colors.primary};
-  align-self: center;
+font-size: ${metrics.widthPercentageToDP(32)}px;
+font-family: BodoniOrnamentsITCTT;
+text-transform: uppercase;
+${({ color }) =>
+    color &&
+    css`
+      color: ${color};
+    `}
+align-self: center;
 `;
 
 export const LogoBox = styled.View`
-  flex-direction:row;
+flex-direction: row;
 `;

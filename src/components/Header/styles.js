@@ -10,7 +10,7 @@ export const HeaderBox = styled.View`
     ${metrics.widthPercentageToDP(20)}px ${metrics.widthPercentageToDP(0)}px
     ${metrics.widthPercentageToDP(20)}px;
   width: ${metrics.widthPercentageToDP(360)}px;
-  height: ${metrics.widthPercentageToDP(90)}px;
+  height: ${metrics.widthPercentageToDP(70)}px;
   ${dark &&
   css`
       background: ${colors.black};

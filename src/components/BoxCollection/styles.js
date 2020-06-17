@@ -1,12 +1,12 @@
-import {metrics} from '../../styles/Metrics';
-import {colors} from '../../styles/Colors';
-import {darkMode} from '../../utils/settingsApp';
-import styled, {css} from 'styled-components/native';
+import { metrics } from '../../styles/Metrics';
+import { colors } from '../../styles/Colors';
+import { darkMode } from '../../utils/settingsApp';
+import styled, { css } from 'styled-components/native';
 
 const dark = darkMode();
 
 export const Container = styled.ScrollView`
-  ${({hide}) =>
+  ${({ hide }) =>
     hide &&
     css`
       display: none;
@@ -14,7 +14,7 @@ export const Container = styled.ScrollView`
   padding: 0px 0px 10px;
   background-color: ${colors.white};
   ${dark &&
-    css`
+  css`
       background: ${colors.black};
       border-bottom-width: 0.3px;
     `}

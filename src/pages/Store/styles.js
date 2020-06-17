@@ -1,7 +1,7 @@
-import {colors} from '../../styles/Colors';
-import {metrics} from '../../styles/Metrics';
-import {darkMode} from '../../utils/settingsApp';
-import styled, {css} from 'styled-components/native';
+import { colors } from '../../styles/Colors';
+import { metrics } from '../../styles/Metrics';
+import { darkMode } from '../../utils/settingsApp';
+import styled, { css } from 'styled-components/native';
 
 const dark = darkMode();
 
@@ -10,7 +10,7 @@ export const Container = styled.View`
   justify-content: center;
   align-items: center;
   ${dark &&
-    css`
+  css`
       background: ${colors.gray1};
     `}
 `;
@@ -35,7 +35,7 @@ export const StoreItem = styled.View.attrs({
   height: ${metrics.widthPercentageToDP(172)}px;
   background: ${colors.white};
   ${dark &&
-    css`
+  css`
       background: ${colors.black};
     `}
   border-radius: 7px;
@@ -55,7 +55,7 @@ export const BookTitle = styled.Text`
   text-align: center;
   color: ${colors.gray1};
   ${dark &&
-    css`
+  css`
       color: ${colors.white};
     `}
 `;
@@ -72,16 +72,16 @@ export const BookSection = styled.Text`
   text-transform: capitalize;
   text-align: center;
   ${dark &&
-    css`
+  css`
       color: ${colors.light_blue};
     `}
 `;
 
 export const BookDescription = styled.Text`
-  font-size: 16px;
+  font-size: 15px;
   color: ${colors.gray1};
   ${dark &&
-    css`
+  css`
       color: ${colors.white};
     `}
   text-align: justify;

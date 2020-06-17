@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ThemeProvider } from 'styled-components';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { colors } from './src/styles/Colors';
 import Header from './src/components/Header';
 import Home from './src/pages/Home';
 import MyBooks from './src/pages/MyBooks';
@@ -46,7 +47,27 @@ function App() {
     < ThemeProvider theme={globalTheme} >
       <Header />
       <NavigationContainer>
-        <Tab.Navigator>
+        <Tab.Navigator screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color }) => {
+            let iconName;
+
+            if (route.name === 'Home') {
+              iconName = focused
+                ? 'ios-information-circle'
+                : 'ios-information-circle-outline';
+            } else if (route.name === 'Settings') {
+              iconName = focused ? 'ios-list-box' : 'ios-list';
+            }
+
+            // You can return any component that you like here!
+            return <Icon name={iconName} size={30} color={color} />;
+          },
+        })}
+          tabBarOptions={{
+            activeTintColor: colors.primary,
+            inactiveTintColor: 'gray',
+            indicatorStyle: { backgroundColor: colors.primary }
+          }}>
           <Tab.Screen name="Home" component={Home} />
           <Tab.Screen name="Store" component={Store} />
           <Tab.Screen name="Upload" component={UploadBook} />

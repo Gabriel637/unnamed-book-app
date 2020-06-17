@@ -47,9 +47,9 @@ function BoxCollection({ books, section }) {
         </SubTextButton>
       </Header>
       <SectionContainer horizontal showsHorizontalScrollIndicator={false}>
-        {/* {booksList.map(book => (
-          <DemoBook name={book.name} author={book.author} />
-        ))} */}
+        {booksList.map(book => (
+          <DemoBook book={book} />
+        ))}
       </SectionContainer>
     </Container>
   );

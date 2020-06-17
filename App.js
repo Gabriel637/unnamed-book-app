@@ -49,7 +49,7 @@ function App() {
         <Tab.Navigator>
           <Tab.Screen name="Home" component={Home} />
           <Tab.Screen name="Store" component={Store} />
-          <Tab.Screen name="UploadBook" component={UploadBook} />
+          <Tab.Screen name="Upload" component={UploadBook} />
           <Tab.Screen name="Profile" component={Profile} />
         </Tab.Navigator>
         <Stack.Screen name="Book" component={Book} />

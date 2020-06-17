@@ -22,12 +22,46 @@ export const Container = styled.KeyboardAvoidingView.attrs(
     `}
 `;
 
+export const Panel = styled.View`
+  width: ${metrics.widthPercentageToDP(360)}px;
+  height: ${metrics.widthPercentageToDP(400)}px;
+  border-radius: 15px;
+  position: absolute;
+  top:0;
+  background: ${colors.primary};
+  ${dark &&
+  css`
+      background: ${colors.black};
+    `}
+`;
+
+export const FormBox = styled.View.attrs({
+  shadowColor: colors.black,
+  shadowOffset: {
+    width: 0,
+    height: 5,
+  },
+  shadowOpacity: 0.34,
+  shadowRadius: 6.27,
+  elevation: 10,
+})`
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  padding: ${metrics.widthPercentageToDP(10)}px;
+  background: ${colors.white};
+  ${dark &&
+  css`
+      background: ${colors.black};
+    `}
+`;
+
 export const InputBox = styled.View`
   align-items: center;
 `;
 
 export const SubText = styled.Text`
-  font-size: 14px;
+  font-size: 12px;
   margin-top: ${metrics.widthPercentageToDP(20)}px;
   color: ${colors.light_blue};
 `;

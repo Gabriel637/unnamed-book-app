@@ -1,25 +1,33 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Container } from './styles';
+import { Container, SubText, Panel, FormBox } from './styles';
 import TextInput from '../../components/TextInput';
+import { colors } from '../../styles/Colors';
 import Logo from '../../components/Logo';
 import Button from '../../components/Button';
+import { darkMode } from '../../utils/settingsApp';
 
-function Register({ navigation }) {
+function Login({ navigation }) {
+  const dark = darkMode();
+
   return (
     <Container>
-      <Logo />
-      <TextInput label="UserName" />
-      <TextInput label="Email" />
-      <TextInput label="Password" passwordInput />
-      <Button text="Sign Up" />
+      <Panel />
+      <Logo color={dark ? colors.primary : colors.white} />
+      <FormBox>
+        <TextInput label="UserName" />
+        <TextInput label="Email" />
+        <TextInput label="Password" passwordInput />
+        <Button text="Sign Up" />
+        <SubText>Signing up you agree to terms and registers</SubText>
+      </FormBox>
     </Container>
   );
 }
 
-export default Register;
+export default Login;
 
-Register.propTypes = {
+Login.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
     getParam: PropTypes.func,
@@ -27,6 +35,6 @@ Register.propTypes = {
   }),
 };
 
-Register.defaultProps = {
+Login.defaultProps = {
   navigation: {},
 };

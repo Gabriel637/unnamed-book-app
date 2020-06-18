@@ -11,7 +11,7 @@ export const Container = styled.View`
   align-items: center;
   ${dark &&
   css`
-      background: ${colors.gray1};
+      background: ${colors.black};
     `}
 `;
 
@@ -21,7 +21,7 @@ export const ContainerBooksList = styled.FlatList`
 `;
 
 export const StoreItem = styled.View.attrs({
-  shadowColor: colors.gray1,
+  shadowColor: colors.black,
   shadowOffset: {
     width: 0,
     height: 5,

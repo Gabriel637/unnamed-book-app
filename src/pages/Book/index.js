@@ -27,7 +27,7 @@ function Book({ navigation }) {
     id: 1,
     name: 'Harry Potter',
     author: 'J.K Rowling',
-    sections: ['top 100', 'thriller'],
+    sections: ['thriller'],
     language: 'English',
     pages: 101,
     position: 1,

@@ -14,7 +14,6 @@ import {
 } from './styles';
 
 function Store({ navigation }) {
-  const [tab, setTab] = useState(1);
   const books = [
     {
       id: 1,
@@ -67,7 +66,7 @@ function Store({ navigation }) {
   const book = ({ item }) => {
     return (
       <StoreItem>
-        <DemoBook book={book} />
+        <DemoBook book={item} />
         <InfoBook>
           <BookTitle numberOfLines={1} ellipsizeMode="tail">
             {item.position}.{item.name}

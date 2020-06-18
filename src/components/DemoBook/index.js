@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {BookBox, BookButton, Title, SubTitle} from './styles';
+import { BookBox, BookButton, Title, SubTitle } from './styles';
 
-function Book({book, handler}) {
+function DemoBook({ navigation, book, handler }) {
   return (
     <BookBox>
-      <BookButton onPress={handler}>
+      <BookButton onPress={() => navigation && navigation.navigate('Book')}>
         <Title>{book.name}</Title>
         <SubTitle>
           {'\n'} {book.author}
@@ -15,14 +15,14 @@ function Book({book, handler}) {
   );
 }
 
-Book.propTypes = {
+DemoBook.propTypes = {
   name: PropTypes.string,
   handler: PropTypes.func,
 };
 
-Book.defaultProps = {
+DemoBook.defaultProps = {
   name: '',
-  handler: () => {},
+  handler: () => { },
 };
 
-export default Book;
+export default DemoBook;

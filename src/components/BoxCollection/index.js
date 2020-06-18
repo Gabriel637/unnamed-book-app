@@ -13,7 +13,7 @@ import {
   SubTextButton,
 } from './styles';
 
-function BoxCollection({ books, section }) {
+function BoxCollection({ books, section, navigation }) {
   const [booksList, setBooksList] = useState([]);
   const [hide, setHide] = useState(false);
 
@@ -48,7 +48,7 @@ function BoxCollection({ books, section }) {
       </Header>
       <SectionContainer horizontal showsHorizontalScrollIndicator={false}>
         {booksList.map(book => (
-          <DemoBook book={book} />
+          <DemoBook book={book} navigation={navigation} />
         ))}
       </SectionContainer>
     </Container>

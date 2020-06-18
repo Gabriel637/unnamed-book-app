@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { scrollHandler } from '../../utils/componentsActions';
 import { Animated } from 'react-native';
 import Loading from '../../components/Loading';
+import EmptyState from '../../components/EmptyState';
 import {
   Container,
   ReviewTitle,
@@ -49,9 +50,7 @@ function Reviews({ navigation }) {
 
   const reviewsEmpty = () => {
     return (
-      <ContainerAdviceStyled>
-        <TextAdviceStyled>Be the first to review this book</TextAdviceStyled>
-      </ContainerAdviceStyled>
+      <EmptyState text={`Be the first to review this book`} />
     );
   };
 

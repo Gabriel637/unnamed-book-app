@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import DemoBook from '../../components/DemoBook';
 import MiniTabs from '../../components/MiniTabs';
 import Loading from '../../components/Loading';
+import EmptyState from '../../components/EmptyState';
 import {
   Container,
   ContainerBooksList,
@@ -19,78 +20,76 @@ function MyBooks({ navigation }) {
   }, 3500);
 
   const books = [
-    {
-      name: 'Harry Potter',
-      author: 'J.K Rowling',
-      sections: ['top 100', 'thriller'],
-    },
-    {
-      name: 'livrinho',
-      author: 'gabriel amorim',
-      sections: ['top 100', 'romantic'],
-    },
-    {
-      name: 'livrinho',
-      author: 'gabriel amorim',
-      sections: ['top 100', 'romantic'],
-    },
-    {
-      name: 'livrinho',
-      author: 'gabriel amorim',
-      sections: ['top 100', 'romantic'],
-    },
-    {
-      name: 'livrinho',
-      author: 'gabriel amorim',
-      sections: ['top 100', 'romantic'],
-    },
-    {
-      name: 'livrinho',
-      author: 'gabriel amorim',
-      sections: ['top 100', 'romantic'],
-    },
-    {
-      name: 'livrinho',
-      author: 'gabriel amorim',
-      sections: ['top 100', 'romantic'],
-    },
-    {
-      name: 'livrinho',
-      author: 'gabriel amorim',
-      sections: ['top 100', 'romantic'],
-    },
-    {
-      name: 'livrinho',
-      author: 'gabriel amorim',
-      sections: ['top 100', 'romantic'],
-    },
-    {
-      name: 'livrinho',
-      author: 'gabriel amorim',
-      sections: ['top 100', 'romantic'],
-    },
-    {
-      name: 'livrinho',
-      author: 'gabriel amorim',
-      sections: ['top 100', 'romantic'],
-    },
-    {
-      name: 'livrinho',
-      author: 'gabriel amorim',
-      sections: ['top 100', 'romantic'],
-    },
-    {
-      name: 'livrinho',
-      author: 'gabriel amorim',
-      sections: ['top 100', 'romantic'],
-    },
+    /*     {
+          name: 'Harry Potter',
+          author: 'J.K Rowling',
+          sections: ['top 100', 'thriller'],
+        },
+        {
+          name: 'livrinho',
+          author: 'gabriel amorim',
+          sections: ['top 100', 'romantic'],
+        },
+        {
+          name: 'livrinho',
+          author: 'gabriel amorim',
+          sections: ['top 100', 'romantic'],
+        },
+        {
+          name: 'livrinho',
+          author: 'gabriel amorim',
+          sections: ['top 100', 'romantic'],
+        },
+        {
+          name: 'livrinho',
+          author: 'gabriel amorim',
+          sections: ['top 100', 'romantic'],
+        },
+        {
+          name: 'livrinho',
+          author: 'gabriel amorim',
+          sections: ['top 100', 'romantic'],
+        },
+        {
+          name: 'livrinho',
+          author: 'gabriel amorim',
+          sections: ['top 100', 'romantic'],
+        },
+        {
+          name: 'livrinho',
+          author: 'gabriel amorim',
+          sections: ['top 100', 'romantic'],
+        },
+        {
+          name: 'livrinho',
+          author: 'gabriel amorim',
+          sections: ['top 100', 'romantic'],
+        },
+        {
+          name: 'livrinho',
+          author: 'gabriel amorim',
+          sections: ['top 100', 'romantic'],
+        },
+        {
+          name: 'livrinho',
+          author: 'gabriel amorim',
+          sections: ['top 100', 'romantic'],
+        },
+        {
+          name: 'livrinho',
+          author: 'gabriel amorim',
+          sections: ['top 100', 'romantic'],
+        },
+        {
+          name: 'livrinho',
+          author: 'gabriel amorim',
+          sections: ['top 100', 'romantic'],
+        }, */
   ];
 
   const booksEmpty = () => {
     return (
-      <ContainerAdvice>
-        <TextAdvice>you don't have any book {'\n'} in your library</TextAdvice>
-      </ContainerAdvice>
+      <EmptyState text={`There's no books in your library, go to store and add some`} />
     );
   };
 

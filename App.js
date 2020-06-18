@@ -21,9 +21,7 @@ import LanguageBook from './src/pages/WriteBook/Language';
 import { setCustomText } from 'react-native-global-props';
 import { darkMode } from './src/utils/settingsApp';
 
-const Tab = createMaterialTopTabNavigator();
-const Stack = createStackNavigator();
-
+const dark = darkMode();
 const fontDefaultName = 'Baskerville';
 
 const globalTheme = {
@@ -44,39 +42,89 @@ const customText = {
 
 setCustomText(customText);
 
-function Tabs() {
-  <NavigationContainer>
-    <Header />
-    <Tab.Navigator screenOptions={({ route }) => ({
-      tabBarIcon: focused => {
-        let iconName;
-        let color;
-        if (route.name === 'Home') {
-          iconName = 'home';
-          color = focused ? colors.primary : colors.gray3;
-        } else if (route.name === 'Settings') {
-          iconName = 'gear';
-          color = focused ? colors.primary : colors.gray3;
-        }
-        return <Icon name={iconName} size={30} color={color} />;
-      },
-    })}
-      tabBarOptions={{
-        activeTintColor: colors.primary,
-        inactiveTintColor: 'gray',
-        indicatorStyle: { backgroundColor: colors.primary },
-        style: {
-          backgroundColor: dark ? colors.black : colors.white
-        }
-      }}>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Store" component={Store} />
-      <Tab.Screen name="Upload" component={UploadBook} />
-      <Tab.Screen name="Profile" component={Profile} />
-      <Stack.Screen name="MyBooks" component={MyBooks} />
-    </Tab.Navigator>
-  </NavigationContainer>
+const headerScreen = {
+  headerStyle: { backgroundColor: dark ? colors.black : colors.white, borderBottomColor: colors.primary, borderBottomWidth: 0.5 },
+  headerBackTitleStyle: { color: colors.primary },
+  headerTintColor: colors.primary
 }
+
+const HomeStack = createStackNavigator();
+
+function HomeStackScreen() {
+  return (
+    <HomeStack.Navigator screenOptions={headerScreen}>
+      <HomeStack.Screen name="Home" component={Home} />
+      <HomeStack.Screen name="Book" component={Book} />
+      <HomeStack.Screen name="Reviews" component={Reviews} />
+    </HomeStack.Navigator>)
+}
+
+const MyBooksStack = createStackNavigator();
+
+function MyBooksStackScreen() {
+  return (
+    <MyBooksStack.Navigator screenOptions={headerScreen}>
+      <MyBooksStack.Screen name="MyBooks" component={MyBooks} />
+      <MyBooksStack.Screen name="Book" component={Book} />
+      <MyBooksStack.Screen name="Reviews" component={Reviews} />
+    </MyBooksStack.Navigator>)
+}
+
+const StoreStack = createStackNavigator();
+
+function StoreStackScreen() {
+  return (
+    <StoreStack.Navigator screenOptions={headerScreen}>
+      <StoreStack.Screen name="Store" component={Store} />
+      <StoreStack.Screen name="Book" component={Book} />
+      <StoreStack.Screen name="Reviews" component={Reviews} />
+    </StoreStack.Navigator>)
+}
+
+const WriteBookStack = createStackNavigator();
+
+function WriteBookStackScreen() {
+  return (
+    <WriteBookStack.Navigator screenOptions={headerScreen}>
+      <WriteBookStack.Screen name="Upload" component={UploadBook} />
+      <WriteBookStack.Screen name="DescriptionBook" component={DescriptionBook} />
+      <WriteBookStack.Screen name="LanguageBook" component={LanguageBook} />
+      <WriteBookStack.Screen name="NameBook" component={NameBook} />
+    </WriteBookStack.Navigator>
+  )
+}
+
+const ProfileStack = createStackNavigator();
+
+function ProfileStackScreen() {
+  return (
+    <ProfileStack.Navigator screenOptions={headerScreen}>
+      <ProfileStack.Screen name="Profile" component={Profile} />
+      <StoreStack.Screen name="Book" component={Book} />
+      <StoreStack.Screen name="Reviews" component={Reviews} />
+    </ProfileStack.Navigator>
+  )
+}
+
+/* const AuthStack = createStackNavigator();
+
+function AuthStackScreen() {
+  return (
+    <AuthStack.Navigator screenOptions={{
+      headerTitle: null,headerScreen
+    }}>
+      <AuthStack.Screen name="Register" component={Register} options={{
+        headerShown: false
+      }} />
+      <AuthStack.Screen name="Login" component={Login} options={{
+        headerShown: false
+      }} />
+    </AuthStack.Navigator>
+  )
+}
+ */
+
+const Tab = createMaterialTopTabNavigator();
 
 function App() {
   const dark = darkMode();
@@ -86,27 +134,19 @@ function App() {
       <NavigationContainer>
         <Header />
         <Tab.Navigator screenOptions={({ route }) => ({
-          tabBarIcon: focused => {
+          tabBarIcon: ({ color }) => {
             let iconName;
-            let color;
+            console.log(route);
             if (route.name === 'Home') {
               iconName = 'home';
-              color = focused ? colors.primary : colors.gray3;
-            } else if (route.name === 'Settings') {
-              iconName = 'gear';
-              color = focused ? colors.primary : colors.gray3;
             } else if (route.name === 'Store') {
               iconName = 'cart';
-              color = focused ? colors.primary : colors.gray3;
             } else if (route.name === 'MyBooks') {
               iconName = 'book-open-variant';
-              color = focused ? colors.primary : colors.gray3;
             } else if (route.name === 'Upload') {
               iconName = 'pencil';
-              color = focused ? colors.primary : colors.gray3;
             } else if (route.name === 'Profile') {
               iconName = 'menu';
-              color = focused ? colors.primary : colors.gray3;
             }
             return <Icon name={iconName} size={26} color={color} />;
           },
@@ -114,38 +154,20 @@ function App() {
           tabBarOptions={{
             showIcon: true,
             showLabel: false,
+            activeTintColor: colors.primary,
+            inactiveTintColor: colors.gray3,
             indicatorStyle: { backgroundColor: colors.primary },
             style: {
               backgroundColor: dark ? colors.black : colors.white
             }
           }}>
-          <Tab.Screen name="Home" component={Home} />
-          <Tab.Screen name="Store" component={Store} />
-          <Stack.Screen name="MyBooks" component={MyBooks} />
-          <Tab.Screen name="Upload" component={UploadBook} />
-          <Tab.Screen name="Profile" component={Profile} />
+          <Tab.Screen name="Home" component={HomeStackScreen} />
+          <Tab.Screen name="Store" component={StoreStackScreen} />
+          <Tab.Screen name="MyBooks" component={MyBooksStackScreen} />
+          <Tab.Screen name="Upload" component={WriteBookStackScreen} />
+          <Tab.Screen name="Profile" component={ProfileStackScreen} />
         </Tab.Navigator>
-      </NavigationContainer>{/* 
-      <NavigationContainer>
-        <Stack.Navigator screenOptions={{
-          headerTitle: null,
-          headerStyle: { backgroundColor: dark ? colors.black : colors.white },
-          headerBackTitleStyle: { color: colors.primary },
-          headerTintColor: colors.primary
-        }}>
-          <Stack.Screen name="Register" component={Register} options={{
-            headerShown: false
-          }} />
-          <Stack.Screen name="Login" component={Login} options={{
-            headerShown: false
-          }} />
-          <Stack.Screen name="Book" component={Book} />
-          <Stack.Screen name="DescriptionBook" component={DescriptionBook} />
-          <Stack.Screen name="LanguageBook" component={LanguageBook} />
-          <Stack.Screen name="NameBook" component={NameBook} />
-          <Stack.Screen name="Reviews" component={Reviews} />
-        </Stack.Navigator>
-      </NavigationContainer> */}
+      </NavigationContainer>
     </ThemeProvider >
   );
 }

@@ -66,7 +66,7 @@ function Store({ navigation }) {
   const book = ({ item }) => {
     return (
       <StoreItem>
-        <DemoBook book={item} />
+        <DemoBook book={item} navigation={navigation} />
         <InfoBook>
           <BookTitle numberOfLines={1} ellipsizeMode="tail">
             {item.position}.{item.name}

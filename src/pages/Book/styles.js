@@ -1,7 +1,7 @@
-import {colors} from '../../styles/Colors';
-import {metrics} from '../../styles/Metrics';
-import {darkMode} from '../../utils/settingsApp';
-import styled, {css} from 'styled-components/native';
+import { colors } from '../../styles/Colors';
+import { metrics } from '../../styles/Metrics';
+import { darkMode } from '../../utils/settingsApp';
+import styled, { css } from 'styled-components/native';
 
 const dark = darkMode();
 
@@ -9,7 +9,7 @@ export const Container = styled.ScrollView`
   flex: 1;
   padding: 10px 20px;
   ${dark &&
-    css`
+  css`
       background: ${colors.black};
     `}
 `;
@@ -32,7 +32,7 @@ export const BookTitle = styled.Text`
   text-align: center;
   color: ${colors.gray1};
   ${dark &&
-    css`
+  css`
       color: ${colors.white};
     `}
 `;
@@ -47,7 +47,7 @@ export const BookSection = styled.Text`
   font-size: 20px;
   color: ${colors.blue};
   ${dark &&
-    css`
+  css`
       color: ${colors.light_blue};
     `}
   text-transform: capitalize;
@@ -58,7 +58,7 @@ export const BookInfo = styled.Text`
   font-size: 16px;
   color: ${colors.gray1};
   ${dark &&
-    css`
+  css`
       color: ${colors.white};
     `}
   text-align: center;
@@ -70,7 +70,7 @@ export const BookDescriptionBox = styled.ScrollView`
   border-bottom-color: ${colors.primary};
   border-bottom-width: 0.5px;
   margin-bottom: ${metrics.widthPercentageToDP(20)}px;
-  ${({line}) =>
+  ${({ line }) =>
     line &&
     css`
       border-top-color: ${colors.primary};
@@ -82,7 +82,7 @@ export const BookDescription = styled.Text`
   font-size: 16px;
   color: ${colors.gray1};
   ${dark &&
-    css`
+  css`
       color: ${colors.white};
     `}
   text-align: justify;
@@ -96,7 +96,7 @@ export const ButtonSeparator = styled.Text`
   align-self: center;
 `;
 
-export const ReviewBox = styled.View`
+export const ReviewBox = styled.TouchableOpacity`
   margin-top: ${metrics.widthPercentageToDP(30)}px;
   height: ${metrics.widthPercentageToDP(35)}px;
   border-bottom-color: ${colors.primary};
@@ -109,7 +109,7 @@ export const ReviewText = styled.Text`
   font-size: 26px;
   color: ${colors.gray1};
   ${dark &&
-    css`
+  css`
       color: ${colors.white};
     `}
   text-align: justify;

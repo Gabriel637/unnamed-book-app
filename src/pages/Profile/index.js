@@ -71,7 +71,7 @@ function Profile({ navigation }) {
         <ProfileSubText>Written Books</ProfileSubText>
         <BooksList horizontal showsHorizontalScrollIndicator={true}>
           {books.map(book => (
-            <DemoBook book={book} />
+            <DemoBook book={book} navigation={navigation} />
           ))}
         </BooksList>
         <ProfileSubText>About</ProfileSubText>

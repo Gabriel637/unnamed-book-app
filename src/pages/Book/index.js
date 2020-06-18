@@ -45,7 +45,7 @@ function Book({ navigation }) {
             by {book.author}
           </BookAuthor>
           <BookSection numberOfLines={1} ellipsizeMode="tail">
-            {book.sections[0]} {book.sections[1] && '- ' + book.sections[1]}
+            {book.sections[0]}{book.sections[1] && '- ' + book.sections[1]}
             {book.sections[2] && '- ' + book.sections[2]}
             {book.sections[3] && '- ' + book.sections[3]}
             {book.sections[4] && '- ' + book.sections[4]}
@@ -66,7 +66,7 @@ function Book({ navigation }) {
       <Button text="read now" />
       <ButtonSeparator>or</ButtonSeparator>
       <Button outline text="add to my library" />
-      <ReviewBox>
+      <ReviewBox onPress={() => navigation.navigate('Reviews')}>
         <ReviewText>Reviews</ReviewText>
         <Icon
           name="chevron-right"

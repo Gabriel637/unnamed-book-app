@@ -12,7 +12,6 @@ import {
 function MyBooks({ navigation }) {
   const [tab, setTab] = useState(1);
   const books = [
-    /* 
     {
       name: 'Harry Potter',
       author: 'J.K Rowling',
@@ -77,7 +76,7 @@ function MyBooks({ navigation }) {
       name: 'livrinho',
       author: 'gabriel amorim',
       sections: ['top 100', 'romantic'],
-    }, */
+    },
   ];
 
   const booksEmpty = () => {
@@ -89,7 +88,7 @@ function MyBooks({ navigation }) {
   };
 
   const book = ({ item }) => {
-    return <DemoBook book={item} />;
+    return <DemoBook book={item} navigation={navigation} />;
   };
   const columns = 3;
 
@@ -125,7 +124,8 @@ function MyBooks({ navigation }) {
         data={books}
         keyExtractor={item => item.cpf}
         ListEmptyComponent={booksEmpty}
-        renderItem={book}></ContainerBooksList>
+        renderItem={book}>
+      </ContainerBooksList>
     </Container>
   );
 }

@@ -88,11 +88,11 @@ const WriteBookStack = createStackNavigator();
 function WriteBookStackScreen() {
   return (
     <WriteBookStack.Navigator screenOptions={headerScreen}>
-      <WriteBookStack.Screen name="Book uploaded" component={SuccessBook} />
       <WriteBookStack.Screen name="Upload" component={UploadBook} />
       <WriteBookStack.Screen name="Book's name" component={NameBook} />
       <WriteBookStack.Screen name="Book's description" component={DescriptionBook} />
       <WriteBookStack.Screen name="Book's language" component={LanguageBook} />
+      <WriteBookStack.Screen name="Book uploaded" component={SuccessBook} />
     </WriteBookStack.Navigator>
   )
 }

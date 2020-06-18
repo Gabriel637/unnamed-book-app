@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import LottieView from 'lottie-react-native';
+import success from '../../../assets/animations/success.json';
 import { MaterialCommunityIcons as Icon } from '../../../styles/LoadFonts';
 import { colors } from '../../../styles/Colors';
 import { metrics } from '../../../styles/Metrics';
@@ -10,13 +12,9 @@ function SuccessBook({ navigation }) {
   return (
     <Container>
       <SuccessBox>
-        <Icon
-          name='check'
-          size={metrics.widthPercentageToDP(60)}
-          color={colors.primary}
-        />
+        <LottieView source={success} autoPlay loop={false} style={{ width: 200 }} />
       </SuccessBox>
-      <TextInfo>You uploaded succesfully your book, share to your friends!</TextInfo>
+      <TextInfo>Your book was succesfully upload, share to your friends!</TextInfo>
       <Button text='Copy link' handler={() => alert('copied')} />
       <Button text='Go home' outline handler={() => navigation.navigate("Home")} />
     </Container>

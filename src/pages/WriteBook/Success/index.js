@@ -4,26 +4,27 @@ import { MaterialCommunityIcons as Icon } from '../../../styles/LoadFonts';
 import { colors } from '../../../styles/Colors';
 import { metrics } from '../../../styles/Metrics';
 import Button from '../../../components/Button';
-import { Container, UploadBox, TextInfo } from './styles';
+import { Container, SuccessBox, TextInfo } from './styles';
 
-function UploadBook({ navigation }) {
+function SuccessBook({ navigation }) {
   return (
     <Container>
-      <UploadBox>
+      <SuccessBox>
         <Icon
-          name='upload'
+          name='check'
           size={metrics.widthPercentageToDP(60)}
           color={colors.primary}
         />
-      </UploadBox>
-      <TextInfo>You can upload your own book, just insert a PDF</TextInfo>
-      <Button text='Next' handler={() => navigation.navigate("Book's name")} />
+      </SuccessBox>
+      <TextInfo>You uploaded succesfully your book, share to your friends!</TextInfo>
+      <Button text='Copy link' handler={() => alert('copied')} />
+      <Button text='Go home' outline handler={() => navigation.navigate("Home")} />
     </Container>
   );
 }
-export default UploadBook;
+export default SuccessBook;
 
-UploadBook.propTypes = {
+SuccessBook.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
     getParam: PropTypes.func,
@@ -31,6 +32,6 @@ UploadBook.propTypes = {
   }),
 };
 
-UploadBook.defaultProps = {
+SuccessBook.defaultProps = {
   navigation: {},
 };

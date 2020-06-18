@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Button from '../../../components/Button';
 import TextArea from '../../../components/TextArea';
-import {Container} from './styles';
+import { Container } from './styles';
 
-function DescriptionBook({navigation}) {
+function DescriptionBook({ navigation }) {
   return (
     <Container>
       <TextArea label="Description" autoFocus />
-      <Button text='NEXT'/>
+      <Button text='Next' handler={() => navigation.navigate("Book's language")} />
     </Container>
   );
 }

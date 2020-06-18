@@ -18,6 +18,7 @@ import UploadBook from './src/pages/WriteBook/Upload';
 import NameBook from './src/pages/WriteBook/Name';
 import DescriptionBook from './src/pages/WriteBook/Description';
 import LanguageBook from './src/pages/WriteBook/Language';
+import SuccessBook from './src/pages/WriteBook/Success';
 import { setCustomText } from 'react-native-global-props';
 import { darkMode } from './src/utils/settingsApp';
 
@@ -45,6 +46,7 @@ setCustomText(customText);
 const headerScreen = {
   headerStyle: { backgroundColor: dark ? colors.black : colors.white, borderBottomColor: colors.primary, borderBottomWidth: 0.5 },
   headerBackTitleStyle: { color: colors.primary },
+  headerBackTitle: "Back",
   headerTintColor: colors.primary
 }
 
@@ -64,7 +66,7 @@ const MyBooksStack = createStackNavigator();
 function MyBooksStackScreen() {
   return (
     <MyBooksStack.Navigator screenOptions={headerScreen}>
-      <MyBooksStack.Screen name="MyBooks" component={MyBooks} />
+      <MyBooksStack.Screen name="My books" component={MyBooks} />
       <MyBooksStack.Screen name="Book" component={Book} />
       <MyBooksStack.Screen name="Reviews" component={Reviews} />
     </MyBooksStack.Navigator>)
@@ -86,10 +88,11 @@ const WriteBookStack = createStackNavigator();
 function WriteBookStackScreen() {
   return (
     <WriteBookStack.Navigator screenOptions={headerScreen}>
+      <WriteBookStack.Screen name="Book uploaded" component={SuccessBook} />
       <WriteBookStack.Screen name="Upload" component={UploadBook} />
-      <WriteBookStack.Screen name="DescriptionBook" component={DescriptionBook} />
-      <WriteBookStack.Screen name="LanguageBook" component={LanguageBook} />
-      <WriteBookStack.Screen name="NameBook" component={NameBook} />
+      <WriteBookStack.Screen name="Book's name" component={NameBook} />
+      <WriteBookStack.Screen name="Book's description" component={DescriptionBook} />
+      <WriteBookStack.Screen name="Book's language" component={LanguageBook} />
     </WriteBookStack.Navigator>
   )
 }

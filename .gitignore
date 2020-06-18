@@ -59,5 +59,3 @@ buck-out/
 /ios/Pods/
 yarn.lock
 ios/Podfile.lock
-yarn.lock
-ios/Podfile.lock

@@ -6,6 +6,7 @@ import Button from '../../components/Button';
 import { metrics } from '../../styles/Metrics';
 import { colors } from '../../styles/Colors';
 import { MaterialCommunityIcons as Icon } from '../../styles/LoadFonts';
+import Loading from '../../components/Loading';
 import {
   Container,
   BookItem,
@@ -23,6 +24,12 @@ import {
 
 function Book({ navigation }) {
   const [line, setLine] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 3500);
+
   const book = {
     id: 1,
     name: 'Harry Potter',
@@ -36,45 +43,48 @@ function Book({ navigation }) {
   };
 
   return (
-    <Container>
-      <BookItem>
-        <DemoBook book={book} />
-        <InfoBook>
-          <BookTitle>{book.name}</BookTitle>
-          <BookAuthor numberOfLines={1} ellipsizeMode="tail">
-            by {book.author}
-          </BookAuthor>
-          <BookSection numberOfLines={1} ellipsizeMode="tail">
-            {book.sections[0]}{book.sections[1] && '- ' + book.sections[1]}
-            {book.sections[2] && '- ' + book.sections[2]}
-            {book.sections[3] && '- ' + book.sections[3]}
-            {book.sections[4] && '- ' + book.sections[4]}
-          </BookSection>
-          <BookInfo>
-            in {book.language}
-            {'\n'}
-            {book.pages} pages
+    <>
+      {loading && <Loading show={loading} />}
+      <Container>
+        <BookItem>
+          <DemoBook book={book} />
+          <InfoBook>
+            <BookTitle>{book.name}</BookTitle>
+            <BookAuthor numberOfLines={1} ellipsizeMode="tail">
+              by {book.author}
+            </BookAuthor>
+            <BookSection numberOfLines={1} ellipsizeMode="tail">
+              {book.sections[0]}{book.sections[1] && '- ' + book.sections[1]}
+              {book.sections[2] && '- ' + book.sections[2]}
+              {book.sections[3] && '- ' + book.sections[3]}
+              {book.sections[4] && '- ' + book.sections[4]}
+            </BookSection>
+            <BookInfo>
+              in {book.language}
+              {'\n'}
+              {book.pages} pages
           </BookInfo>
-        </InfoBook>
-      </BookItem>
-      <BookDescriptionBox
-        onScrollBeginDrag={() => setLine(true)}
-        onScroll={e => setLine(scrollHandler(e))}
-        line={line}>
-        <BookDescription>{book.description}</BookDescription>
-      </BookDescriptionBox>
-      <Button text="read now" />
-      <ButtonSeparator>or</ButtonSeparator>
-      <Button outline text="add to my library" />
-      <ReviewBox onPress={() => navigation.navigate('Reviews')}>
-        <ReviewText>Reviews</ReviewText>
-        <Icon
-          name="chevron-right"
-          size={metrics.widthPercentageToDP(30)}
-          color={colors.blue}
-        />
-      </ReviewBox>
-    </Container>
+          </InfoBook>
+        </BookItem>
+        <BookDescriptionBox
+          onScrollBeginDrag={() => setLine(true)}
+          onScroll={e => setLine(scrollHandler(e))}
+          line={line}>
+          <BookDescription>{book.description}</BookDescription>
+        </BookDescriptionBox>
+        <Button text="read now" />
+        <ButtonSeparator>or</ButtonSeparator>
+        <Button outline text="add to my library" />
+        <ReviewBox onPress={() => navigation.navigate('Reviews')}>
+          <ReviewText>Reviews</ReviewText>
+          <Icon
+            name="chevron-right"
+            size={metrics.widthPercentageToDP(30)}
+            color={colors.blue}
+          />
+        </ReviewBox>
+      </Container>
+    </>
   );
 }
 

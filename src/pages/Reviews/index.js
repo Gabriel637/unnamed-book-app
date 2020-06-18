@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { scrollHandler } from '../../utils/componentsActions';
 import { Animated } from 'react-native';
+import Loading from '../../components/Loading';
 import {
   Container,
   ReviewTitle,
@@ -15,6 +16,11 @@ import {
 function Reviews({ navigation }) {
   const [line, setLine] = useState(false);
   const [visibilityAnim] = useState(new Animated.Value(0));
+  const [loading, setLoading] = useState(true);
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 3500);
 
   useEffect(() => {
     Animated.timing(visibilityAnim, {
@@ -63,27 +69,30 @@ function Reviews({ navigation }) {
   };
 
   return (
-    <Container>
-      <ReviewTitleBox
-        line={line}
-        style={{
-          opacity: visibilityAnim.interpolate({
-            inputRange: [0, 1],
-            outputRange: [1, 1],
-          }),
-        }}>
-        <ReviewTitle> Harry Potter's reviews</ReviewTitle>
-      </ReviewTitleBox>
-      <ContainerReviewsList
-        onScrollBeginDrag={() => setLine(true)}
-        onScroll={e => setLine(scrollHandler(e))}
-        showsVerticalScrollIndicator={false}
-        data={reviews}
-        keyExtractor={item => item.id}
-        ListEmptyComponent={reviewsEmpty}
-        renderItem={review}
-      />
-    </Container>
+    <>
+      {loading && <Loading show={loading} />}
+      <Container>
+        <ReviewTitleBox
+          line={line}
+          style={{
+            opacity: visibilityAnim.interpolate({
+              inputRange: [0, 1],
+              outputRange: [1, 1],
+            }),
+          }}>
+          <ReviewTitle> Harry Potter's reviews</ReviewTitle>
+        </ReviewTitleBox>
+        <ContainerReviewsList
+          onScrollBeginDrag={() => setLine(true)}
+          onScroll={e => setLine(scrollHandler(e))}
+          showsVerticalScrollIndicator={false}
+          data={reviews}
+          keyExtractor={item => item.id}
+          ListEmptyComponent={reviewsEmpty}
+          renderItem={review}
+        />
+      </Container>
+    </>
   );
 }
 

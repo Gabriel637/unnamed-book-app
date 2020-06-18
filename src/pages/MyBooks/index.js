@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import DemoBook from '../../components/DemoBook';
 import MiniTabs from '../../components/MiniTabs';
+import Loading from '../../components/Loading';
 import {
   Container,
   ContainerBooksList,
@@ -11,6 +12,12 @@ import {
 
 function MyBooks({ navigation }) {
   const [tab, setTab] = useState(1);
+  const [loading, setLoading] = useState(true);
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 3500);
+
   const books = [
     {
       name: 'Harry Potter',
@@ -116,17 +123,20 @@ function MyBooks({ navigation }) {
     },
   ];
   return (
-    <Container>
-      <MiniTabs items={items} />
-      <ContainerBooksList
-        numColumns={columns}
-        showsVerticalScrollIndicator={false}
-        data={books}
-        keyExtractor={item => item.cpf}
-        ListEmptyComponent={booksEmpty}
-        renderItem={book}>
-      </ContainerBooksList>
-    </Container>
+    <>
+      {loading && <Loading show={loading} />}
+      <Container>
+        <MiniTabs items={items} />
+        <ContainerBooksList
+          numColumns={columns}
+          showsVerticalScrollIndicator={false}
+          data={books}
+          keyExtractor={item => item.cpf}
+          ListEmptyComponent={booksEmpty}
+          renderItem={book}>
+        </ContainerBooksList>
+      </Container>
+    </>
   );
 }
 

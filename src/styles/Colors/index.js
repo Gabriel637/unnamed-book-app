@@ -20,6 +20,7 @@ export const colors = {
   gray4: '#BDBDBD',
   gray5: '#c4c4c4',
   gray6: '#4F4F4F',
+  beige: '#ca6e5d',
   red_light: '#FF3A44',
   orange: '#ff9c00',
   primary: '#845EC2',

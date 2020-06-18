@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import DemoBook from '../../components/DemoBook';
-import MiniTabs from '../../components/MiniTabs';
+import Loading from '../../components/Loading';
 import {
   Container,
   ContainerBooksList,
@@ -14,6 +14,11 @@ import {
 } from './styles';
 
 function Store({ navigation }) {
+  const [loading, setLoading] = useState(true);
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 3500);
   const books = [
     {
       id: 1,
@@ -88,15 +93,18 @@ function Store({ navigation }) {
 
 
   return (
-    <Container>
-      <ContainerBooksList
-        showsVerticalScrollIndicator={false}
-        data={books}
-        keyExtractor={item => item.cpf}
-        ListEmptyComponent={booksEmpty}
-        renderItem={book}
-      />
-    </Container>
+    <>
+      {loading && <Loading show={loading} />}
+      <Container>
+        <ContainerBooksList
+          showsVerticalScrollIndicator={false}
+          data={books}
+          keyExtractor={item => item.cpf}
+          ListEmptyComponent={booksEmpty}
+          renderItem={book}
+        />
+      </Container>
+    </>
   );
 }
 

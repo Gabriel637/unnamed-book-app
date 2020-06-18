@@ -1,9 +1,16 @@
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
 import BoxCollection from '../../components/BoxCollection';
+import Loading from '../../components/Loading';
 import { Container } from './styles';
 
 function Home({ navigation }) {
+  const [loading, setLoading] = useState(true);
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 3500);
+
   const sections = [
     {
       name: 'romantic',
@@ -37,11 +44,14 @@ function Home({ navigation }) {
     },
   ];
   return (
-    <Container>
-      {sections.map((section) => (
-        <BoxCollection books={books} section={section.name} navigation={navigation} />
-      ))}
-    </Container>
+    <>
+      {loading && <Loading show={loading} />}
+      <Container>
+        {sections.map((section) => (
+          <BoxCollection books={books} section={section.name} navigation={navigation} />
+        ))}
+      </Container>
+    </>
   );
 }
 export default Home;

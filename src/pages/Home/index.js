@@ -12,7 +12,7 @@ function Home({ navigation }) {
       name: 'thriller',
     },
     {
-      name: 'action',
+      name: 'education',
     },
     {
       name: 'sci-fi',
@@ -29,6 +29,11 @@ function Home({ navigation }) {
       name: 'livrinho',
       author: 'gabriel amorim',
       sections: ['romantic'],
+    },
+    {
+      name: 'livrinho',
+      author: 'gabriel amorim',
+      sections: ['education'],
     },
   ];
   return (

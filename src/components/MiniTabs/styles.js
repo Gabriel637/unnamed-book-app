@@ -1,7 +1,7 @@
-import {colors} from '../../styles/Colors';
-import {metrics} from '../../styles/Metrics';
-import {darkMode} from '../../utils/settingsApp';
-import styled, {css} from 'styled-components/native';
+import { colors } from '../../styles/Colors';
+import { metrics } from '../../styles/Metrics';
+import { darkMode } from '../../utils/settingsApp';
+import styled, { css } from 'styled-components/native';
 
 const dark = darkMode();
 
@@ -21,13 +21,13 @@ export const TabsBox = styled.View.attrs({
   background: ${colors.white};
   flex-direction: row;
   justify-content: space-between;
-  ${({hide}) =>
+  ${({ hide }) =>
     hide &&
     css`
       display: none;
     `}
   ${dark &&
-    css`
+  css`
       background: ${colors.black};
     `}
 `;
@@ -38,18 +38,23 @@ export const TextBox = styled.TouchableOpacity`
   margin: 0px 10px;
   align-items: center;
   justify-content: center;
-  border-bottom-width: 3px;
-  ${({active}) =>
+  border-bottom-color: ${colors.white};
+  border-bottom-width: 2px;
+  ${dark &&
+  css`
+      border-bottom-color: ${colors.black};
+    `}
+  ${({ active }) =>
     active &&
     css`
       border-bottom-color: ${colors.primary};
-      border-bottom-width: 3px;
+      border-bottom-width: 2px;
     `}
 `;
 
 export const TextIcon = styled.Text`
   color: ${colors.gray3};
-  ${({active}) =>
+  ${({ active }) =>
     active &&
     css`
       color: ${colors.primary};

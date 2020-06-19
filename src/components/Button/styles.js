@@ -33,9 +33,10 @@ export const ButtonBox = styled.View.attrs({
     width: 0,
     height: 5,
   },
-  shadowOpacity: 0.34,
-  shadowRadius: 6.27,
-  elevation: 10,
+  shadowOpacity: 0.25,
+  shadowRadius: 3.84,
+
+  elevation: 5,
 })`
   margin-top: ${metrics.widthPercentageToDP(25)}px;
 `;

@@ -1,7 +1,7 @@
-import {metrics} from '../../styles/Metrics';
-import {colors} from '../../styles/Colors';
-import {darkMode} from '../../utils/settingsApp';
-import styled, {css} from 'styled-components/native';
+import { metrics } from '../../styles/Metrics';
+import { colors } from '../../styles/Colors';
+import { darkMode } from '../../utils/settingsApp';
+import styled, { css } from 'styled-components/native';
 
 const dark = darkMode();
 
@@ -11,9 +11,10 @@ export const BookBox = styled.View.attrs({
     width: 0,
     height: 5,
   },
-  shadowOpacity: 0.34,
-  shadowRadius: 6.27,
-  elevation: 10,
+  shadowOpacity: 0.25,
+  shadowRadius: 3.84,
+
+  elevation: 5,
 })``;
 
 export const BookButton = styled.TouchableOpacity`
@@ -24,7 +25,7 @@ export const BookButton = styled.TouchableOpacity`
   background-color: ${colors.lighter};
   border: 1px solid ${colors.gray4};
   ${dark &&
-    css`
+  css`
       background: ${colors.gray1};
       border: 1px solid ${colors.gray1};
     `}
@@ -38,7 +39,7 @@ export const Title = styled.Text`
   text-align: center;
   color: ${colors.gray2};
   ${dark &&
-    css`
+  css`
       color: ${colors.white};
     `}
 `;
@@ -49,7 +50,7 @@ export const SubTitle = styled.Text`
   text-align: center;
   color: ${colors.gray2};
   ${dark &&
-    css`
+  css`
       color: ${colors.white};
     `}
 `;

@@ -10,6 +10,7 @@ export const Container = styled.View`
   padding-bottom: ${metrics.widthPercentageToDP(20)}px;
   justify-content: center;
   align-items: center;
+  background: ${colors.lighter2};
   ${dark &&
   css`
       background: ${colors.black};

@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { LogoBox, LogoTitle, LogoSymbol } from './styles';
+import { LogoBox, LogoTitle } from './styles';
 import { colors } from '../../styles/Colors';
 
 function Logo({ color }) {
     return (
         <LogoBox >
-            <LogoTitle color={color}>alexandria</LogoTitle>
-            <LogoSymbol color={color}>er</LogoSymbol>
+            <LogoTitle color={color}>ALEXANDRIA</LogoTitle>
         </LogoBox>
     );
 }

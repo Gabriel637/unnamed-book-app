@@ -11,7 +11,7 @@ function Loading({ text }) {
     return (
         <Container>
             <Box>
-                <LottieView source={notFound} autoPlay loop={true} style={{ width: 270 }} />
+                <LottieView source={notFound} autoPlay loop={true} resizeMode='cover' style={{ width: 270 }} />
             </Box>
             <Text>{text}</Text>
         </Container>

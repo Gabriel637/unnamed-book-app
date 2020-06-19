@@ -47,7 +47,8 @@ const headerScreen = {
   headerStyle: { backgroundColor: dark ? colors.black : colors.white, borderBottomColor: colors.primary, borderBottomWidth: 0.5 },
   headerBackTitleStyle: { color: colors.primary },
   headerBackTitle: "Back",
-  headerTintColor: colors.primary
+  headerTintColor: colors.primary,
+  headerShown: false
 }
 
 const HomeStack = createStackNavigator();

@@ -15,7 +15,7 @@ export const Container = styled(Animated.View)`
   justify-content:center;
   align-items:center;
   width: ${metrics.widthPercentageToDP(360)}px;
-  height: ${metrics.widthPercentageToDP(630)}px;
+  height: 100%;
 `;
 
 export const Box = styled.View`

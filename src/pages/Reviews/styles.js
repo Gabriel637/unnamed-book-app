@@ -1,17 +1,18 @@
-import {Animated} from 'react-native';
-import {colors} from '../../styles/Colors';
-import {metrics} from '../../styles/Metrics';
-import {darkMode} from '../../utils/settingsApp';
-import styled, {css} from 'styled-components/native';
+import { Animated } from 'react-native';
+import { colors } from '../../styles/Colors';
+import { metrics } from '../../styles/Metrics';
+import { darkMode } from '../../utils/settingsApp';
+import styled, { css } from 'styled-components/native';
 
 const dark = darkMode();
 
 export const Container = styled.View`
   flex: 1;
+  padding-bottom: ${metrics.widthPercentageToDP(20)}px;
   justify-content: center;
   align-items: center;
   ${dark &&
-    css`
+  css`
       background: ${colors.black};
     `}
 `;
@@ -34,7 +35,7 @@ export const ReviewItem = styled.View.attrs({
   width: ${metrics.widthPercentageToDP(340)}px;
   background: ${colors.white};
   ${dark &&
-    css`
+  css`
       background: ${colors.gray1};
     `}
   border-radius: 7px;
@@ -46,7 +47,7 @@ export const ReviewDescription = styled.Text`
   font-size: 16px;
   color: ${colors.gray1};
   ${dark &&
-    css`
+  css`
       color: ${colors.white};
     `}
   text-align: justify;
@@ -60,7 +61,7 @@ export const UserName = styled.Text`
 
 export const ReviewTitleBox = styled(Animated.View)`
   width: ${metrics.widthPercentageToDP(340)}px;
-  ${({line}) =>
+  ${({ line }) =>
     line &&
     css`
       border-bottom-color: ${colors.primary};

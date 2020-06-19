@@ -7,6 +7,7 @@ const dark = darkMode();
 
 export const Container = styled.View`
   flex: 1;
+  padding-bottom: ${metrics.widthPercentageToDP(20)}px;
   justify-content: center;
   align-items: center;
   ${dark &&

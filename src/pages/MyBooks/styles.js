@@ -1,16 +1,17 @@
-import {colors} from '../../styles/Colors';
-import {metrics} from '../../styles/Metrics';
-import {darkMode} from '../../utils/settingsApp';
-import styled, {css} from 'styled-components/native';
+import { colors } from '../../styles/Colors';
+import { metrics } from '../../styles/Metrics';
+import { darkMode } from '../../utils/settingsApp';
+import styled, { css } from 'styled-components/native';
 
 const dark = darkMode();
 
 export const Container = styled.View`
   flex: 1;
+  padding-bottom: ${metrics.widthPercentageToDP(20)}px;
   justify-content: center;
   align-items: center;
   ${dark &&
-    css`
+  css`
       background: ${colors.black};
     `}
 `;

@@ -11,7 +11,8 @@ import MyBooks from './src/pages/MyBooks';
 import Store from './src/pages/Store';
 import Genres from './src/pages/Genres';
 import Search from './src/pages/Search';
-import SearchResults from './src/pages/SearchResults';
+import BookSearch from './src/pages/Search/Book';
+import UserSearch from './src/pages/Search/User';
 import Book from './src/pages/Book';
 import Reviews from './src/pages/Reviews';
 import Login from './src/pages/Login';
@@ -75,12 +76,29 @@ function StoreStackScreen() {
 }
 
 const SearchStack = createStackNavigator();
+const SearchResultsStack = createMaterialTopTabNavigator();
+
+function SearchResultsStackScreen() {
+  return (
+    <SearchResultsStack.Navigator tabBarOptions={{
+      showLabel: true,
+      activeTintColor: colors.primary,
+      inactiveTintColor: colors.gray3,
+      indicatorStyle: { backgroundColor: colors.primary },
+      style: {
+        backgroundColor: dark ? colors.black : colors.white
+      }
+    }}>
+      <SearchResultsStack.Screen name="BOOKS" component={BookSearch} />
+      <SearchResultsStack.Screen name="USERS" component={UserSearch} />
+    </SearchResultsStack.Navigator>)
+}
 
 function SearchStackScreen() {
   return (
     <SearchStack.Navigator screenOptions={headerScreen}>
       <SearchStack.Screen name="Search" component={Search} />
-      <SearchStack.Screen name="Search's result" component={SearchResults} />
+      <SearchStack.Screen name="SearchResult" component={SearchResultsStackScreen} />
     </SearchStack.Navigator>)
 }
 

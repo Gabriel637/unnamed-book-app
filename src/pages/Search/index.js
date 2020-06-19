@@ -8,7 +8,7 @@ function Search({ navigation }) {
   return (
     <Container>
       <TextInput label="Search" autoFocus />
-      <Button text='Search' handler={() => navigation.navigate("Search's result")} />
+      <Button text='Search' handler={() => navigation.navigate("SearchResult")} />
     </Container>
   );
 }

@@ -1,6 +1,6 @@
-import { colors } from '../../styles/Colors';
-import { metrics } from '../../styles/Metrics';
-import { darkMode } from '../../utils/settingsApp';
+import { colors } from '../../../styles/Colors';
+import { metrics } from '../../../styles/Metrics';
+import { darkMode } from '../../../utils/settingsApp';
 import styled, { css } from 'styled-components/native';
 
 const dark = darkMode();

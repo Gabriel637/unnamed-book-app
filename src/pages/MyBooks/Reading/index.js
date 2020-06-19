@@ -1,18 +1,14 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import DemoBook from '../../components/DemoBook';
-import MiniTabs from '../../components/MiniTabs';
-import Loading from '../../components/Loading';
-import EmptyState from '../../components/EmptyState';
+import DemoBook from '../../../components/DemoBook';
+import Loading from '../../../components/Loading';
+import EmptyState from '../../../components/EmptyState';
 import {
   Container,
   ContainerBooksList,
-  ContainerAdvice,
-  TextAdvice,
 } from './styles';
 
 function MyBooks({ navigation }) {
-  const [tab, setTab] = useState(1);
   const [loading, setLoading] = useState(true);
 
   setTimeout(() => {
@@ -98,34 +94,10 @@ function MyBooks({ navigation }) {
   };
   const columns = 3;
 
-  const items = [
-    {
-      name: 'Reading',
-      handler: () => {
-        setTab(0);
-      },
-      active: tab == 0 ? true : false,
-    },
-    {
-      name: 'All',
-      handler: () => {
-        setTab(1);
-      },
-      active: tab == 1 ? true : false,
-    },
-    {
-      name: 'Writings',
-      handler: () => {
-        setTab(2);
-      },
-      active: tab == 2 ? true : false,
-    },
-  ];
   return (
     <>
       {loading && <Loading show={loading} />}
       <Container>
-        <MiniTabs items={items} />
         <ContainerBooksList
           numColumns={columns}
           showsVerticalScrollIndicator={false}

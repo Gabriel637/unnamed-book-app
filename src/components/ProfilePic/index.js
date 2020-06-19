@@ -5,10 +5,10 @@ import { colors } from '../../styles/Colors';
 import { MaterialCommunityIcons as Icon } from '../../styles/LoadFonts';
 import { ProfileBox, ProfileButton, Title, SubTitle } from './styles';
 
-function ProfilePic({ handler, image }) {
+function ProfilePic({ image, navigation }) {
   return (
     <ProfileBox>
-      <ProfileButton onPress={handler}>
+      <ProfileButton onPress={() => navigation && navigation.navigate('User')}>
         <Icon
           name="account-circle"
           size={metrics.widthPercentageToDP(100)}

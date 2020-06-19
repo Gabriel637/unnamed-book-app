@@ -18,12 +18,9 @@ export const Box = styled.View.attrs({
 `;
 
 export const Button = styled.TouchableOpacity`
-  margin: 0px 10px 10px 0;
-  border-radius: 10px;
-  justify-content: center;
-  align-items: center;
+  margin: 10px;
   width: ${metrics.widthPercentageToDP(100)}px;
-  height: ${metrics.widthPercentageToDP(160)}px;
+  height: ${metrics.widthPercentageToDP(130)}px;
 `;
 
 export const Title = styled.Text`

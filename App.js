@@ -7,8 +7,10 @@ import { colors } from './src/styles/Colors';
 import { MaterialCommunityIcons as Icon } from './src/styles/LoadFonts';
 import Header from './src/components/Header';
 import Home from './src/pages/Home';
-import MyBooks from './src/pages/MyBooks';
+import MyBooksReading from './src/pages/MyBooks/Reading';
+import MyBooksWritten from './src/pages/MyBooks/Written';
 import Store from './src/pages/Store';
+import User from './src/pages/User';
 import Genres from './src/pages/Genres';
 import Search from './src/pages/Search';
 import BookSearch from './src/pages/Search/Book';
@@ -60,7 +62,6 @@ function HomeStackScreen() {
   return (
     <HomeStack.Navigator screenOptions={headerScreen}>
       <HomeStack.Screen name="Home" component={Home} />
-      <HomeStack.Screen name="Book" component={Book} />
       <HomeStack.Screen name="Reviews" component={Reviews} />
     </HomeStack.Navigator>)
 }
@@ -76,11 +77,11 @@ function StoreStackScreen() {
 }
 
 const SearchStack = createStackNavigator();
-const SearchResultsStack = createMaterialTopTabNavigator();
+const SearchResultsTab = createMaterialTopTabNavigator();
 
-function SearchResultsStackScreen() {
+function SearchResultsTabScreen() {
   return (
-    <SearchResultsStack.Navigator tabBarOptions={{
+    <SearchResultsTab.Navigator tabBarOptions={{
       showLabel: true,
       activeTintColor: colors.primary,
       inactiveTintColor: colors.gray3,
@@ -89,26 +90,45 @@ function SearchResultsStackScreen() {
         backgroundColor: dark ? colors.black : colors.white
       }
     }}>
-      <SearchResultsStack.Screen name="BOOKS" component={BookSearch} />
-      <SearchResultsStack.Screen name="USERS" component={UserSearch} />
-    </SearchResultsStack.Navigator>)
+      <SearchResultsTab.Screen name="Books" component={BookSearch} />
+      <SearchResultsTab.Screen name="Users" component={UserSearch} />
+    </SearchResultsTab.Navigator>)
 }
 
 function SearchStackScreen() {
   return (
     <SearchStack.Navigator screenOptions={headerScreen}>
       <SearchStack.Screen name="Search" component={Search} />
-      <SearchStack.Screen name="SearchResult" component={SearchResultsStackScreen} />
+      <SearchStack.Screen name="SearchResult" component={SearchResultsTabScreen} />
+      <SearchStack.Screen name="User" component={User} />
+      <SearchStack.Screen name="Book" component={Book} />
     </SearchStack.Navigator>)
 }
 
 
 const MyBooksStack = createStackNavigator();
+const MyBooksFiltersTab = createMaterialTopTabNavigator();
+
+function MyBooksFiltersTabScreen() {
+  return (
+    <MyBooksFiltersTab.Navigator tabBarOptions={{
+      showLabel: true,
+      activeTintColor: colors.primary,
+      inactiveTintColor: colors.gray3,
+      indicatorStyle: { backgroundColor: colors.primary },
+      style: {
+        backgroundColor: dark ? colors.black : colors.white
+      }
+    }}>
+      <MyBooksFiltersTab.Screen name="Reading" component={MyBooksReading} />
+      <MyBooksFiltersTab.Screen name="Written" component={MyBooksWritten} />
+    </MyBooksFiltersTab.Navigator>)
+}
 
 function MyBooksStackScreen() {
   return (
     <MyBooksStack.Navigator screenOptions={headerScreen}>
-      <MyBooksStack.Screen name="My books" component={MyBooks} />
+      <MyBooksStack.Screen name="My books" component={MyBooksFiltersTabScreen} />
       <MyBooksStack.Screen name="Book" component={Book} />
       <MyBooksStack.Screen name="Reviews" component={Reviews} />
     </MyBooksStack.Navigator>)
@@ -134,8 +154,8 @@ function ProfileStackScreen() {
   return (
     <ProfileStack.Navigator screenOptions={headerScreen}>
       <ProfileStack.Screen name="Profile" component={Profile} />
-      <StoreStack.Screen name="Book" component={Book} />
-      <StoreStack.Screen name="Reviews" component={Reviews} />
+      {/* <ProfileStack.Screen name="Book" component={Book} /> */}
+      {/* <ProfileStack.Screen name="Reviews" component={Reviews} /> */}
     </ProfileStack.Navigator>
   )
 }

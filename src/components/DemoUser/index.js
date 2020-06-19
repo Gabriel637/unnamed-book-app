@@ -7,7 +7,7 @@ function DemoUser({ navigation, user, handler }) {
   return (
     <Box>
       <Button onPress={() => navigation && navigation.navigate('User')}>
-        <ProfilePic />
+        <ProfilePic navigation={navigation} />
         <Title>{user.name}</Title>
       </Button>
     </Box>

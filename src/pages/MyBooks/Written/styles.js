@@ -18,7 +18,8 @@ export const Container = styled.View`
 `;
 
 export const ContainerBooksList = styled.FlatList`
-  width: ${metrics.widthPercentageToDP(350)}px;
+  width: ${metrics.widthPercentageToDP(328)}px;
+  padding: 5px;
 `;
 
 export const TextStyled = styled.Text`

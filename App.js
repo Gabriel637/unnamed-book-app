@@ -9,6 +9,7 @@ import Header from './src/components/Header';
 import Home from './src/pages/Home';
 import MyBooks from './src/pages/MyBooks';
 import Store from './src/pages/Store';
+import Genres from './src/pages/Genres';
 import Book from './src/pages/Book';
 import Reviews from './src/pages/Reviews';
 import Login from './src/pages/Login';
@@ -26,7 +27,6 @@ const dark = darkMode();
 const fontDefaultName = 'Baskerville';
 
 const globalTheme = {
-  primary: 'red',
   font: {
     light: `${fontDefaultName}-Light`,
     semiBold: `${fontDefaultName}-SemiBold`,
@@ -62,6 +62,19 @@ function HomeStackScreen() {
     </HomeStack.Navigator>)
 }
 
+const StoreStack = createStackNavigator();
+
+function StoreStackScreen() {
+  return (
+    <StoreStack.Navigator screenOptions={headerScreen}>
+      <StoreStack.Screen name="Genres" component={Genres} />
+      <StoreStack.Screen name="Store" component={Store} />
+      <StoreStack.Screen name="Book" component={Book} />
+      <StoreStack.Screen name="Reviews" component={Reviews} />
+    </StoreStack.Navigator>)
+}
+
+
 const MyBooksStack = createStackNavigator();
 
 function MyBooksStackScreen() {
@@ -71,17 +84,6 @@ function MyBooksStackScreen() {
       <MyBooksStack.Screen name="Book" component={Book} />
       <MyBooksStack.Screen name="Reviews" component={Reviews} />
     </MyBooksStack.Navigator>)
-}
-
-const StoreStack = createStackNavigator();
-
-function StoreStackScreen() {
-  return (
-    <StoreStack.Navigator screenOptions={headerScreen}>
-      <StoreStack.Screen name="Store" component={Store} />
-      <StoreStack.Screen name="Book" component={Book} />
-      <StoreStack.Screen name="Reviews" component={Reviews} />
-    </StoreStack.Navigator>)
 }
 
 const WriteBookStack = createStackNavigator();

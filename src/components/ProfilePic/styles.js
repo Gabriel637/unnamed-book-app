@@ -1,7 +1,7 @@
-import {metrics} from '../../styles/Metrics';
-import {colors} from '../../styles/Colors';
-import {darkMode} from '../../utils/settingsApp';
-import styled, {css} from 'styled-components/native';
+import { metrics } from '../../styles/Metrics';
+import { colors } from '../../styles/Colors';
+import { darkMode } from '../../utils/settingsApp';
+import styled, { css } from 'styled-components/native';
 
 const dark = darkMode();
 
@@ -24,10 +24,10 @@ export const ProfileButton = styled.TouchableOpacity`
   background-color: ${colors.lighter};
   border: 1px solid ${colors.gray4};
   ${dark &&
-    css`
+  css`
       background: ${colors.gray1};
       border: 1px solid ${colors.gray1};
     `}
-  width: ${metrics.widthPercentageToDP(120)}px;
-  height: ${metrics.widthPercentageToDP(120)}px;
+  width: ${metrics.widthPercentageToDP(100)}px;
+  height: ${metrics.widthPercentageToDP(100)}px;
 `;

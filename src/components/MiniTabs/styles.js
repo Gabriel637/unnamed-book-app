@@ -20,7 +20,7 @@ export const TabsBox = styled.View.attrs({
   margin-bottom: 10px;
   background: ${colors.white};
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   ${({ hide }) =>
     hide &&
     css`

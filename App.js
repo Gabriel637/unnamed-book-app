@@ -10,6 +10,8 @@ import Home from './src/pages/Home';
 import MyBooks from './src/pages/MyBooks';
 import Store from './src/pages/Store';
 import Genres from './src/pages/Genres';
+import Search from './src/pages/Search';
+import SearchResults from './src/pages/SearchResults';
 import Book from './src/pages/Book';
 import Reviews from './src/pages/Reviews';
 import Login from './src/pages/Login';
@@ -69,9 +71,17 @@ function StoreStackScreen() {
     <StoreStack.Navigator screenOptions={headerScreen}>
       <StoreStack.Screen name="Genres" component={Genres} />
       <StoreStack.Screen name="Store" component={Store} />
-      <StoreStack.Screen name="Book" component={Book} />
-      <StoreStack.Screen name="Reviews" component={Reviews} />
     </StoreStack.Navigator>)
+}
+
+const SearchStack = createStackNavigator();
+
+function SearchStackScreen() {
+  return (
+    <SearchStack.Navigator screenOptions={headerScreen}>
+      <SearchStack.Screen name="Search" component={Search} />
+      <SearchStack.Screen name="Search's result" component={SearchResults} />
+    </SearchStack.Navigator>)
 }
 
 
@@ -147,6 +157,8 @@ function App() {
               iconName = 'home';
             } else if (route.name === 'Store') {
               iconName = 'cart';
+            } else if (route.name === 'Search') {
+              iconName = 'magnify';
             } else if (route.name === 'MyBooks') {
               iconName = 'book-open-variant';
             } else if (route.name === 'Upload') {
@@ -169,6 +181,7 @@ function App() {
           }}>
           <Tab.Screen name="Home" component={HomeStackScreen} />
           <Tab.Screen name="Store" component={StoreStackScreen} />
+          <Tab.Screen name="Search" component={SearchStackScreen} />
           <Tab.Screen name="MyBooks" component={MyBooksStackScreen} />
           <Tab.Screen name="Upload" component={WriteBookStackScreen} />
           <Tab.Screen name="Profile" component={ProfileStackScreen} />

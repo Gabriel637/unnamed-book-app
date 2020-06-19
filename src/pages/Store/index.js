@@ -99,7 +99,7 @@ function Store({ navigation }) {
         <ContainerBooksList
           showsVerticalScrollIndicator={false}
           data={books}
-          keyExtractor={item => item.cpf}
+          keyExtractor={item => item.id}
           ListEmptyComponent={booksEmpty}
           renderItem={book}
         />

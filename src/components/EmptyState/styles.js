@@ -27,8 +27,9 @@ export const Box = styled.View`
 `;
 
 export const Text = styled.Text`
+  margin-top:${metrics.widthPercentageToDP(20)}px;
   text-align:center;
-  font-size:26px;
+  font-size:22px;
   color: ${colors.gray1};
   ${dark &&
   css`

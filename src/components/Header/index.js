@@ -10,12 +10,6 @@ function Header({ }) {
     <>
       <HeaderBox>
         <Logo />
-        <Icon
-          name="magnify"
-          size={metrics.widthPercentageToDP(30)}
-          color={colors.gray3}
-          onPress={null}
-        />
       </HeaderBox>
     </>
   );

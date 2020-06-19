@@ -12,10 +12,10 @@ export const Container = styled(Animated.View)`
   css`
     background: ${colors.black};
     `}
-  justify-content:center;
+  padding-top:${metrics.widthPercentageToDP(150)}px;
   align-items:center;
   width: ${metrics.widthPercentageToDP(360)}px;
-  height: 100%;
+  height: 105%;
 `;
 
 export const Box = styled.View`

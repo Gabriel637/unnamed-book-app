@@ -38,7 +38,7 @@ function BoxCollection({ books, section, navigation }) {
       <Header>
         <SectionText>{section}</SectionText>
         <SubTextButton>
-          <SubText>SEE ALL</SubText>
+          <SubText>See all</SubText>
           <Icon
             name="chevron-right"
             size={metrics.widthPercentageToDP(13)}

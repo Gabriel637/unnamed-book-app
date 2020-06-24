@@ -7,7 +7,7 @@ import { Container } from './styles';
 function DescriptionBook({ navigation }) {
   return (
     <Container>
-      <TextArea label="Description" autoFocus />
+      <TextArea label="Description" />
       <Button text='Next' handler={() => navigation.navigate("Book's language")} />
     </Container>
   );

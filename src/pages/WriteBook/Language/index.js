@@ -7,7 +7,7 @@ import { Container } from './styles';
 function LanguageBook({ navigation }) {
   return (
     <Container>
-      <TextInput label="Language" autoFocus />
+      <TextInput label="Language" />
       <Button text='Next' handler={() => navigation.navigate("Book uploaded")} />
     </Container>
   );

@@ -7,7 +7,7 @@ import { Container } from './styles';
 function NameBook({ navigation }) {
   return (
     <Container>
-      <TextInput label="Name" autoFocus />
+      <TextInput label="Name" />
       <Button text='Next' handler={() => navigation.navigate("Book's description")} />
     </Container>
   );

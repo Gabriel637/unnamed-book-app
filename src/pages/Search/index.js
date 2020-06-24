@@ -7,7 +7,7 @@ import { Container } from './styles';
 function Search({ navigation }) {
   return (
     <Container>
-      <TextInput label="Search" autoFocus />
+      <TextInput label="Search" />
       <Button text='Search' handler={() => navigation.navigate("SearchResult")} />
     </Container>
   );

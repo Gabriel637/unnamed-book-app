@@ -214,7 +214,9 @@ function App() {
             inactiveTintColor: colors.gray3,
             indicatorStyle: { backgroundColor: colors.primary },
             style: {
-              backgroundColor: dark ? colors.black : colors.white
+              backgroundColor: dark ? colors.black : colors.white,
+              elevation: 0,
+              shadowOpacity: 0,
             }
           }}>
           <Tab.Screen name="Home" component={HomeStackScreen} />

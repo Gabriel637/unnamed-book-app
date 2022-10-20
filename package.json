@@ -29,7 +29,7 @@
     "react-native-gesture-handler": "^1.6.1",
     "react-native-global-props": "^1.1.5",
     "react-native-masked-text": "^1.13.0",
-    "react-native-reanimated": "^1.9.0",
+    "react-native-reanimated": "^2.10.0",
     "react-native-safe-area-context": "^1.0.0",
     "react-native-screens": "^2.7.0",
     "react-native-tab-view": "^2.14.4",
